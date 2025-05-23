@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dantani Sachin | Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+    /* Reset and base */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0d1117;
+      color: #c9d1d9;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      min-height: 100vh;
+    }
+    a {
+      color: #58a6ff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #1f6feb;
+    }
+
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 1rem 2rem 4rem;
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: #161b22;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+    }
+    nav .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #58a6ff;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+    nav ul li {
+      font-weight: 600;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 1rem;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      color: #58a6ff;
+      margin-bottom: 0.5rem;
+    }
+    .hero h2 {
+      font-weight: 300;
+      color: #8b949e;
+      margin-bottom: 1.5rem;
+      height: 28px; /* for typing effect */
+    }
+    /* Typing effect */
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blinkCaret {
+      0%, 100% { border-color: transparent }
+      50% { border-color: #58a6ff }
+    }
+    .typing {
+      border-right: 2px solid #58a6ff;
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block;
+      animation:
+        typing 3s steps(30, end),
+        blinkCaret 0.75s step-end infinite;
+      max-width: 22ch;
+    }
+    .hero p {
+      max-width: 600px;
+      font-size: 1.1rem;
+      color: #8b949e;
+      margin-bottom: 2rem;
+    }
+    .btn-primary {
+      background-color: #238636;
+      color: #f0f6fc;
+      padding: 0.75rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 5px 15px #238636aa;
+    }
+    .btn-primary:hover {
+      background-color: #2ea043;
+      box-shadow: 0 8px 20px #2ea043cc;
+    }
+
+    /* About */
+    #about {
+      background: #161b22;
+      padding: 3rem 2rem;
+      border-radius: 12px;
+      margin-top: 3rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      color: #c9d1d9;
+    }
+    #about img {
+      border-radius: 12px;
+      width: 280px;
+      height: 280px;
+      object-fit: cover;
+      box-shadow: 0 0 15px #238636aa;
+      flex-shrink: 0;
+    }
+    #about .text {
+      flex: 1;
+    }
+    #about h2 {
+      color: #58a6ff;
+      margin-bottom: 1rem;
+    }
+    #about p {
+      font-size: 1.1rem;
+      color: #8b949e;
+      line-height: 1.5;
+    }
+
+    /* Skills */
+    #skills {
+      margin-top: 4rem;
+    }
+    #skills h2 {
+      text-align: center;
+      color: #58a6ff;
+      margin-bottom: 2rem;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 2rem;
+      justify-items: center;
+    }
+    .skill {
+      position: relative;
+      width: 120px;
+      height: 120px;
+    }
+    .skill svg {
+      transform: rotate(-90deg);
+      width: 120px;
+      height: 120px;
+    }
+    .skill circle {
+      fill: none;
+      stroke-width: 12;
+      stroke-linecap: round;
+    }
+    .skill .bg {
+      stroke: #30363d;
+    }
+    .skill .progress {
+      stroke: #238636;
+      stroke-dasharray: 339.292; /* 2 * PI * r (r=54) */
+      stroke-dashoffset: 339.292;
+      transition: stroke-dashoffset 1.3s ease-out;
+    }
+    .skill .skill-name {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -60%);
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #c9d1d9;
+    }
+    .skill .skill-percent {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -40%);
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #238636;
+    }
+
+    /* Projects */
+    #projects {
+      margin-top: 4rem;
+    }
+    #projects h2 {
+      text-align: center;
+      color: #58a6ff;
+      margin-bottom: 2rem;
+    }
+    .projects-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    .project-card {
+      background: #161b22;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #238636aa;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 30px #2ea043cc;
+    }
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .project-card:hover img {
+      transform: scale(1.05);
+    }
+    .project-content {
+      padding: 1rem 1.5rem;
+      color: #c9d1d9;
+    }
+    .project-content h3 {
+      margin-bottom: 0.5rem;
+      color: #58a6ff;
+    }
+    .project-content p {
+      font-size: 0.95rem;
+      color: #8b949e;
+      line-height: 1.3;
+    }
+
+    /* Contact */
+    #contact {
+      margin-top: 4rem;
+      background: #161b22;
+      padding: 3rem 2rem;
+      border-radius: 12px;
+      color: #c9d1d9;
+    }
+    #contact h2 {
+      color: #58a6ff;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    form input, form textarea {
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      border: none;
+      background: #0d1117;
+      color: #c9d1d9;
+      font-size: 1rem;
+      box-shadow: 0 0 10px #23863666 inset;
+      transition: box-shadow 0.3s ease;
+      resize: none;
+    }
+    form input:focus, form textarea:focus {
+      outline: none;
+      box-shadow: 0 0 12px #2ea043;
+      background: #161b22;
+    }
+    form button {
+      background-color: #238636;
+      border: none;
+      padding: 0.75rem 2rem;
+      border-radius: 50px;
+      color: #f0f6fc;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 5px 15px #238636aa;
+      transition: background-color 0.3s ease;
+    }
+    form button:hover {
+      background-color: #2ea043;
+      box-shadow: 0 8px 20px #2ea043cc;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1.5rem 2rem;
+      background: #161b22;
+      color: #8b949e;
+      font-size: 0.9rem;
+      user-select: none;
+      margin-top: 4rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      #about {
+        flex-direction: column;
+        text-align: center;
+      }
+      #about img {
+        margin-bottom: 1.5rem;
+        width: 200px;
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Sachin</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero container" id="hero">
+    <h1>Hello, I'm Sachin</h1>
+    <h2><span class="typing"></span></h2>
+    <p>A passionate Web Developer & Python enthusiast crafting modern digital experiences.</p>
+    <button class="btn-primary" onclick="scrollToSection('contact')">Get In Touch</button>
+  </section>
+
+  <section id="about" class="container">
+    <img src="https://avatars.githubusercontent.com/u/583231?v=4" alt="Sachin" />
+    <div class="text">
+      <h2>About Me</h2>
+      <p>
+        I am Sachin Dantani, a dedicated B.Com student and a passionate web developer from Mahesana.  
+        I love creating beautiful, performant websites and learning new technologies like Python and JavaScript.  
+        I enjoy problem-solving and turning ideas into reality through code.
+      </p>
+    </div>
+  </section>
+
+  <section id="skills" class="container">
+    <h2>My Skills</h2>
+    <div class="skills-grid">
+      <div class="skill" data-percent="90">
+        <svg>
+          <circle class="bg" cx="60" cy="60" r="54"></circle>
+          <circle class="progress" cx="60" cy="60" r="54"></circle>
+        </svg>
+        <div class="skill-name">HTML</div>
+        <div class="skill-percent">0%</div>
+      </div>
+      <div class="skill" data-percent="85">
+        <svg>
+          <circle class="bg" cx="60" cy="60" r="54"></circle>
+          <circle class="progress" cx="60" cy="60" r="54"></circle>
+        </svg>
+        <div class="skill-name">CSS</div>
+        <div class="skill-percent">0%</div>
+      </div>
+      <div class="skill" data-percent="75">
+        <svg>
+          <circle class="bg" cx="60" cy="60" r="54"></circle>
+          <circle class="progress" cx="60" cy="60" r="54"></circle>
+        </svg>
+        <div class="skill-name">JavaScript</div>
+        <div class="skill-percent">0%</div>
+      </div>
+      <div class="skill" data-percent="65">
+        <svg>
+          <circle class="bg" cx="60" cy="60" r="54"></circle>
+          <circle class="progress" cx="60" cy="60" r="54"></circle>
+        </svg>
+        <div class="skill-name">Python</div>
+        <div class="skill-percent">0%</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="container">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="https://picsum.photos/seed/tcp/400/180" alt="TCP India Website" />
+        <div class="project-content">
+          <h3>TCP India Website</h3>
+          <p>A responsive website with dark mode and smooth animations using Bootstrap & JS.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://picsum.photos/seed/portfolio/400/180" alt="Portfolio Website" />
+        <div class="project-content">
+          <h3>Portfolio Website</h3>
+          <p>A personal portfolio showcasing skills and projects with modern UI design.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://picsum.photos/seed/assignment/400/180" alt="Cooperation Assignment" />
+        <div class="project-content">
+          <h3>Cooperation Assignment</h3>
+          <p>A detailed assignment project with visuals and structured content.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="container">
+    <h2>Contact Me</h2>
+    <form onsubmit="event.preventDefault(); alert('Message sent! Thank you!'); this.reset();">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Dantani Sachin | All Rights Reserved
+  </footer>
+
+  <script>
+    // Typing effect text
+    const typingTexts = [
+      'Web Developer.',
+      'Python Enthusiast.',
+      'Problem Solver.',
+      'Tech Learner.'
+    ];
+    let typingIndex = 0;
+    let charIndex = 0;
+    const typingElement = document.querySelector('.typing');
+
+    function type() {
+      if (charIndex < typingTexts[typingIndex].length) {
+        typingElement.textContent += typingTexts[typingIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, 150);
+      } else {
+        setTimeout(erase, 2000);
+      }
+    }
+    function erase() {
+      if (charIndex > 0) {
+        typingElement.textContent = typingTexts[typingIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, 100);
+      } else {
+        typingIndex = (typingIndex + 1) % typingTexts.length;
+        setTimeout(type, 500);
+      }
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typingTexts.length) type();
+    });
+
+    // Animate circular skill bars
+    function animateSkills() {
+      const skills = document.querySelectorAll('.skill');
+      skills.forEach(skill => {
+        const circle = skill.querySelector('.progress');
+        const percentText = skill.querySelector('.skill-percent');
+        const radius = 54;
+        const circumference = 2 * Math.PI * radius;
+        const percent = skill.getAttribute('data-percent');
+
+        circle.style.strokeDasharray = circumference;
+        circle.style.strokeDashoffset = circumference;
+
+        // Animate stroke offset
+        setTimeout(() => {
+          const offset = circumference - (circumference * percent) / 100;
+          circle.style.strokeDashoffset = offset;
+          percentText.textContent = percent + '%';
+        }, 500);
+      });
+    }
+    window.addEventListener('load', animateSkills);
+
+    // Scroll to section on button click
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>

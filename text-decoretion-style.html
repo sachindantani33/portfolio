@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo of text</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-2">
+                        <input type="number" id="fs" onchange="setFontSize()" class="form-control">
+                    </div>
+                    <div class="col-md-2">
+                        <input type="color" id="fc" onchange="setFontColor()">
+                    </div>
+                    <div class="col-md-2">
+                        <button id="bold" onclick="clickhere()" class="btn btn-sm btn-light">B</button>
+                    </div>
+                    <div class="col-md-2">
+                        <button id="italic" onclick="open1()" class="btn btn-light">I</button>
+                    </div>
+                    <div class="col-md-2">
+                        <button id="sachin1" onclick="this1()" class="btn btn-light">U</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 mt-2">
+                <textarea id="data" class="form-control" rows="10"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function setFontSize(){
+            var fs = document.getElementById("fs").value;
+            document.getElementById("data").style.fontSize=fs+"px";
+        }
+        function setFontColor(){
+            var fc = document.getElementById("fc").value;
+            document.getElementById("data").style.color=fc;
+        }
+        function clickhere(){
+            
+            document.getElementById("data").style.fontWeight="bold";
+            document.getElementById("bold").setAttribute("class", "fw-bold");
+        }
+
+        function open1(){
+            document.getElementById("data").style.fontStyle="italic";
+            document.getElementById("italic").setAttribute("class", "sachin")
+        }
+
+        function this1(){
+            document.getElementById("data").style.textDecoration="underline";
+            document.getElementById("sachin1").style.setAttribute("class","sachin");
+        }
+    </script>
+    
+</body>
+</html>

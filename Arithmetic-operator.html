@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo of Arithmetic-operator</title>
+    
+</head>
+
+<body>
+    
+
+    <div>
+        <input type="number" id="result">
+        <input type="number" id="demo">
+        <button onclick="adition()">+</button>
+        <button onclick="sub()">-</button>
+        <button onclick="multi()">*</button>
+        <button onclick="modulo()">/</button>
+    </div>
+    <h1 id="ss"></h1>
+    
+
+    <script>
+        function adition() {
+            a = document.getElementById("result").value;
+            b = document.getElementById("demo").value;
+
+            c = parseInt(a) + parseInt(b);
+            document.getElementById("ss").innerText="Answer : "+c
+        
+        }
+
+        function sub(){
+            ds = document.getElementById("result").value;
+            ss = document.getElementById("demo").value;
+
+            sachin = parseInt(ds) - parseInt(ss);
+            document.getElementById("ss").innerText="Answer : "+sachin
+        }
+
+        function multi(){
+            ds1 = document.getElementById("result").value;
+            ss1 = document.getElementById("demo").value;
+
+            sachin2 = parseInt(ds1) * parseInt(ss1);
+            document.getElementById("ss").innerText="Answer : "+sachin2
+        }
+
+        function modulo(){
+            cn1 = document.getElementById("result").value;
+            cn2 = document.getElementById("demo").value;
+
+            sachin3 = parseInt(cn1) / parseInt(cn2);
+            document.getElementById("ss").innerText="Answer : "+sachin3
+        }
+
+    </script>
+    
+
+</body>
+
+</html>

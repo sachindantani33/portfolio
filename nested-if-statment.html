@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo of Nested if</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="m-5">
+        <input type="number" id="input1">
+        <select name="" id="gender">
+            <option value="male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+        <button onclick="button1()">Check</button>
+    </div>
+    <h1 id="result"></h1>
+
+    <script>
+        function button1(){
+            age = parseInt(document.getElementById("input1").value);
+            sd = document.getElementById("gender").value;
+
+            if(age>=18 && age<=25){
+                if(sd=="male")
+                {
+                    document.getElementById("result").innerText="You are Eligible";
+                }
+                else{
+                    document.getElementById("result").innerText="Only male candidate is allowed."
+                }
+                
+            }
+            else{
+                document.getElementById("result").innerText="Yo are not Eligible"
+            }
+        }
+        
+
+
+    </script>
+    
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

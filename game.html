@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo of game</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        .box{
+            height: 300px;
+            width: 100%;
+            border: 1px solid red;
+            padding: 10px;
+        }
+        .box1{
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            background-color: green;
+            margin-top: 188px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box1" id="sachin1"></div>
+    </div>
+    <button onclick="jump()">Jump up</button>
+    <button onclick="jump1()">Jump down</button>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        function jump(){
+            document.getElementById("sachin1").style.marginTop="0px";
+            document.getElementById("sachin1").style.marginLeft="20px";
+        }
+        function jump1(){
+            document.getElementById("sachin1").style.marginTop="150px";
+            document.getElementById("sachin1").style.marginLeft="50px";
+        }
+        
+    </script>
+</body>
+</html>

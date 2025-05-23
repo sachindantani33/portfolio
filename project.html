@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .navbar {
+            -border: 1px solid red;
+            display: flex;
+            justify-content: center;
+            /* Center content inside navbar */
+            align-items: center;
+            padding: 10px 20px;
+            top: 20px;
+        }
+
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            gap: 40px;
+            /* spacing between list items */
+        }
+
+        ul li a {
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #070d0f, #16292f, #102027);
+            color: white;
+            height: 100vh;
+            -display: block;
+
+
+        }
+
+        .projects-section {
+            -padding: 50px;
+            -background-image: url(images/projects1.jpg);
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #333;
+            margin-top: 30px;
+        }
+
+        .section-subtitle {
+            color: #777;
+            margin-bottom: 40px;
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: #555555;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            color: white;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-image {
+            width: 350px;
+            height: 200px;
+            object-fit: cover;
+
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            margin: 15px 0 5px;
+        }
+
+        .project-description {
+            padding: 0 15px;
+            color: #ffffff;
+            width: 350px;
+        }
+
+        .project-link {
+            display: inline-block;
+            margin: 15px;
+            padding: 10px 20px;
+            background: #007bff;
+            color: #fff;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .project-link:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <ul>
+            <li><a href="portfolio2.html" id="home-link">Home</a></li>
+            <li><a href="aboutme.html" id="services-link">About me</a></li>
+            <li><a href="skill1.html" id="about-link">Skills</a></li>
+            <li><a href="project.html" id="contact-link">Project</a></li>
+            <li><a href="contact.html" id="contact-link">Contact</a></li>
+        </ul>
+    </div>
+
+    <section id="projects" class="projects-section">
+        <h2 class="section-title text-white">My Projects</h2>
+        <p class="section-subtitle">A showcase of my latest work</p>
+
+        <div class="projects-container">
+            <div class="container d-flex justify-content-around">
+                <div class="project-card" data-aos="fade-up">
+                    <img src="images/project.png" alt="Project 1" class="project-image">
+                    <h3 class="project-title">TCP INDIA Website</h3>
+
+                    <a href="tcp-website.html" class="project-link" target="_blank">View Project</a>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="images/projext2.webp" alt="Project 2" class="project-image">
+                    <h3 class="project-title">UI/UX Design using Figma</h3>
+
+                    <a href="https://www.figma.com/files/team/1387682060765315251/recents-and-sharing?fuid=1387682058727539002"
+                        class="project-link" target="_blank">View Project</a>
+                </div>
+            </div>
+            <!-- More project cards -->
+        </div>
+    </section>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

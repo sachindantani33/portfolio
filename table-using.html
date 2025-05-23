@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo of table</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mx-5 w-50">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form">
+                    <div class="form-group">
+                        <label for="">No</label>
+                        <input type="number" class="form-control" id="rno">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Name</label>
+                        <input type="text" class="form-control" id="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Contact No</label>
+                        <input type="number" class="form-control" id="contact">
+                    </div>
+                    <div class="form-group">
+                        <label for="">City</label>
+                        <input type="text" class="form-control" id="city">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="col-md-12 mt-2">
+            <button class="btn btn-primary" onclick="add()">Add Data</button>
+            <button class="btn btn-warning" onclick="get()">Get Data</button>
+            <div class="col-md-12 mt-3">
+                <table class="table">
+                    <tr>
+                        <th>No</th>
+                        <th>Name</th>
+                        <th>Mobile No</th>
+                        <th>City</th>
+                    </tr>
+                    <tbody id="tableData">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        var data=[];
+        function add(){
+            var no = document.getElementById("rno").value;
+            var name = document.getElementById("name").value;
+            var contact = document.getElementById("contact").value;
+            var city = document.getElementById("city").value;
+
+            var studentData =[no,name,contact,city];
+            data.push(studentData);
+            get();
+
+        }
+        function get(){
+            document.getElementById("tableData").innerHTML="";
+            for(var d in data){
+                var result = "<tr>";
+                    result+="<td>"+data[d][0]+"</td>"
+                    result+="<td>"+data[d][1]+"</td>"
+                    result+="<td>"+data[d][2]+"</td>"
+                    result+="<td>"+data[d][3]+"</td>"
+                    result += "</tr>";
+                    document.getElementById("tableData").innerHTML+=result;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

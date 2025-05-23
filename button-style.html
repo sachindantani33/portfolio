@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo of button</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <div>
+    <input type="number" id="sachin1" placeholder="HEIGHT">
+    <input type="number" id="sachin2" placeholder="WIDTH">
+    <input type="color" id="color">
+    <button onclick="check('red')">Red</button>
+    <button onclick="check('green')">Green</button>
+    <button onclick="check('blue')">Blue</button>
+    <button class="btn btn-primary" onclick="color()">Print</button>
+</div> <br>
+
+    <div id="rec" style="margin: 50px; box-shadow: 0px 5px 5px;">
+        <h1 class="text-center align-items-center">Wel-come</h1>
+    </div>
+
+
+    <script>
+        function color(){
+            
+            s1 = document.getElementById("sachin1").value;
+            s2 = document.getElementById("sachin2").value;
+            s3 = document.getElementById("color").value;
+
+            document.getElementById("rec").style.height=s1 +"px";
+            document.getElementById("rec").style.
+           width= s2 +"px";
+            document.getElementById("rec").style.backgroundColor=s3;
+        }
+        function check(s3){
+            s1 = document.getElementById("sachin1").value;
+            s2 = document.getElementById("sachin2").value;
+
+            document.getElementById("rec").style.height=s1 +"px";
+            document.getElementById("rec").style.
+           width= s2 +"px";
+            document.getElementById("rec").style.backgroundColor=s3;
+        }
+    </script>
+</body>
+</html>

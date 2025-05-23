@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo of keyboard event</title>
+    <style>
+    /* .box{
+        height: 200px;
+        width: 200px;
+        background-color: red;
+    } */
+     input{
+        height: 200px;
+        width: 200px;
+     }
+    </style>
+
+</head>
+<body>
+    <input type="text" id="sachin" onkeypress="ss()" >
+    <input type="text" id="sachin1" onkeydown="ss1()" >
+    <input type="text" id="sachin2" onkeyup="ss2()" >
+
+    
+    
+    <script>
+        function ss(){
+            document.getElementById("sachin").style.backgroundColor="orange";
+        }
+        function ss1(){
+            document.getElementById("sachin1").style.backgroundColor="white";
+        }
+        function ss2(){
+            document.getElementById("sachin2").style.backgroundColor="green";
+        }
+        
+        
+    </script>
+</body>
+</html>

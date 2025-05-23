@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body style="margin: 50px;">
+    
+    <button id="sd" onclick="sachin()">Open Square</button> <br><br>
+
+   
+    <div id="Square">
+
+    </div>
+   
+
+    <script>
+         function sachin()
+         {
+            document.getElementById("Square").style.height="200px";
+            document.getElementById("Square").style.width="200px";
+            document.getElementById("Square").style.backgroundColor="red";
+            document.getElementById("Square").style.boxShadow="5px 10px 15px";
+            document.getElementById("sd").style.fontSize="30px"
+         }
+    </script><br>
+     <button id="sd1" onclick="sachin1()">Open Rectangle</button> <br><br>
+
+     <div id="Rectangle"></div>
+
+     <script>
+        function sachin1()
+        {
+            document.getElementById("Rectangle").style.height="150px";
+            document.getElementById("Rectangle").style.width="350px";
+            document.getElementById("Rectangle").style.backgroundColor="green";
+            document.getElementById("Rectangle").style.boxShadow="5px 10px 15px";
+            document.getElementById("sd1").style.fontSize="30px"
+        }
+            
+     </script> <br>
+
+     <button id="sd2" onclick="sachin2()">Open Circle</button>
+     <div id="Circle"></div>
+
+     <script> 
+        function sachin2()
+        {
+            document.getElementById("Circle").style.height="300px";
+            document.getElementById("Circle").style.width="300px";
+            document.getElementById("Circle").style.borderRadius="50%";
+            document.getElementById("Circle").style.backgroundColor="blue";
+            document.getElementById("Circle").style.boxShadow="5px 10px 15px";
+            document.getElementById("sd2").style.fontSize="30px"
+            
+        }
+     </script>
+    <!-- <div>
+        <label for="">No 1</label>
+        <input id="ss1" type="number"><br>
+
+        <label for="">No 2</label>
+        <input id="ss2" type="number"><br>
+
+        <button onclick="sachin()">Click here</button>
+    </div>
+
+    <script>
+        function sachin()
+        {
+            document.getElementById("ss1").style.border="1px solid red"
+        } -->
+    </script>
+    
+</body>
+</html>

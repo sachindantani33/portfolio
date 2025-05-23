@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo of ractangle</title>
+</head>
+<body>
+    <div>
+    <label for="">Height</label>
+    <input type="number" id="height">
+
+    <label for="">Width</label>
+    <input type="number" id="width">
+
+    <label for="">Choose color</label>
+    <input type="color" id="color">
+
+    <button onclick="check()">Check</button>
+    <button onclick="ss('red')">Red</button>
+    <button onclick="ss('blue')">Blue</button>
+    <button onclick="ss('green')">Green</button>
+</div><br> <br>
+
+<div id="sachin"></div>
+<script>
+    function check(){
+        var h = document.getElementById("height").value;
+        var w = document.getElementById("width").value;
+        var s = document.getElementById("color").value;
+
+        document.getElementById("sachin").style.height=h+"px";
+        document.getElementById("sachin").style.width=w+"px";
+        document.getElementById("sachin").innerText="I Am Sachin"
+        document.getElementById("sachin").style.fontSize="40px";
+        document.getElementById("sachin").style.backgroundColor=s;
+
+    }
+    function ss(s){
+            var h = document.getElementById("height").value;
+            var w = document.getElementById("width").value;
+
+            document.getElementById("sachin").style.height = h + "px";
+            document.getElementById("sachin").style.width = w + "px";
+           document.getElementById("sachin").style.backgroundColor = s;
+         }
+    // function click(s){
+    //     var h = document.getElementById("height").value;
+    //     var w = document.getElementById("width").value;
+
+    //     document.getElementById("sachin").style.height=h+"px";
+    //     document.getElementById("sachin").style.width=w+"px";
+    //     document.getElementById("sachin").style.backgroundColor=s;
+
+    //}
+</script>
+    
+</body>
+</html>

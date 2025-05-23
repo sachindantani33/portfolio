@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/all.css">
+  
+  <style>
+   * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .navbar {
+  -border: 1px solid red;
+  display: flex;
+  justify-content: center;  /* Center content inside navbar */
+  align-items: center;
+  padding: 10px 20px;
+  top: 20px;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 40px; /* spacing between list items */
+}
+ul li a{
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+    
+    
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #070d0f, #16292f, #102027);
+      color: white;
+      height: 100vh;
+      -display: block;
+
+
+    }
+    @font-face{
+      font-family: sachin;
+      src: url(fonts/DancingScript-VariableFont_wght.ttf);
+    }
+    p{
+      font-family: sachin;
+    }
+  </style>
+</head>
+
+<body>
+   <div class="navbar">
+    <ul>
+      <li><a href="portfolio2.html"  id="home-link">Home</a></li>
+      <li><a href="aboutme.html"  id="services-link">About me</a></li>
+      <li><a href="skill1.html"  id="about-link">Skills</a></li>
+      <li><a href="project.html" id="contact-link">Project</a></li>
+      <li><a href="contact.html" id="contact-link">Contact</a></li>
+    </ul>
+  </div>
+  <section id="contact" class="py-4">
+    <div class="container">
+      <h2 class="text-center mb-5">Contact Me</h2>
+      <div class="row ">
+        <!-- Contact Form -->
+        <div class="col-md-7">
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label">Your Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter your name" required  style="max-width: 500px; ">
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Your Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter your email" required style="max-width: 500px; ">
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Your Message</label>
+              <textarea class="form-control" id="message" rows="5" placeholder="Type your message here"
+                required style="max-width: 500px; "></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="col-md-5" >
+          <div class="mb-3">
+            <h5><i class="bi bi-envelope"></i> Email</h5>
+            <p >dantanisachin817@gmail.com</p>
+          </div>
+          <div class="mb-3">
+            <h5><i class="bi bi-telephone"></i> Phone</h5>
+            <p>+91 12345 67890</p>
+          </div>
+          <div class="mb-3">
+            <h5><i class="bi bi-geo-alt"></i> Location</h5>
+            <p>Mahesana, Gujarat, India</p>
+          </div>
+          <div>
+            <h5>Follow Me</h5>
+            <a href="#" class="me-3"><i class="fa-brands fa-facebook"></i></i></a>
+            <a href="#" class="me-3"><i class="fa-brands fa-whatsapp"></i></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

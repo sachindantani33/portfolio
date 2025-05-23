@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="m-3">
+        <input type="number" id="input">
+        <select name="" id="cityselect">
+            <option value="mehsana">mehsana</option>
+            <option value="ahemedabad">Ahemedabad</option>
+            <option value="kadi">Kadi</option>
+            <option value="kalol">Kalol</option>
+        </select>
+        <select name="" id="std">
+            <option value="10th">10th</option>
+            <option value="11th">11th</option>
+            <option value="12th">12th</option>
+        </select>
+        <button onclick="button()">Check</button>
+    </div> <br>
+    <h3 id="sachin"></h3>
+
+    <script>
+        function button() {
+            age = parseInt(document.getElementById("input").value);
+            city1 = document.getElementById("cityselect").value;
+            std = document.getElementById("std").value;
+
+            if (age >= 1 && age <= 30) {
+                document.getElementById("sachin").innerText = "You are going USA"
+
+
+            }
+            else {
+                if (city1 == "mahesana") {
+                    document.getElementById("sachin").innerText = "You are going USA"
+                }
+                else {
+                    if (std == "12th") {
+                        document.getElementById("sachin").innerText = "You are going USA"
+                    }
+                    else {
+                        if (age > 30) {
+                            document.getElementById("sachin").innerText = "You are not going USA"
+                        }
+                    }
+                }
+            }
+            if (age >= 31 && age <= 50) {
+                document.getElementById("sachin").innerText = "You are going canada"
+
+
+            }
+            else {
+                if (city1 == "ahemedabad") {
+                    document.getElementById("sachin").innerText = "You are going canada"
+                }
+                else {
+                    if (std == "11th") {
+                        document.getElementById("sachin").innerText = "You are going canada"
+                    }
+                    else {
+                        if (age > 50) {
+                            document.getElementById("sachin").innerText = "You are not going canada"
+                        }
+                    }
+                }
+            }
+        }
+
+    </script>
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

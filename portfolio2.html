@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+    .navbar {
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 20px;
+      top: 20px;
+    }
+
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      list-style: none;
+      gap: 40px;
+    }
+
+    ul li a {
+      font-weight: bold;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #070d0f, #16292f, #102027);
+      color: white;
+      
+
+
+
+
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      -position: relative;
+      margin: 0;
+      padding: 0;
+
+
+    }
+
+    p {
+      font-size: 1.2rem;
+      justify-self: self-start;
+      margin-top: 50px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      font-size: 1rem;
+      background: #00bcd4;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      margin-top: 20px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #0097a7;
+    }
+
+    .social-links {
+      margin-top: 30px;
+    }
+
+    .social-links a {
+      margin: 0 10px;
+      color: #ccc;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    .social-links a:hover {
+      color: #00bcd4;
+    }
+
+    .sachinhome {
+      display: flex;
+      justify-content: center;
+      justify-content: space-evenly;
+      -height: 100vh;
+      align-items: center;
+      margin-top: 50px;
+      height: 500px;
+    }
+
+    .image-box {
+      border-radius: 50%;
+      overflow: hidden;
+      transition: transform 0.6s ease, box-shadow 0.6s ease;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+
+    .image-box img {
+      -width: 350px;
+      -height: auto;
+      display: block;
+      border-radius: 50%;
+      transition: transform 0.6s ease;
+      object-fit: cover;
+      background-size: 100% 100%;
+      background-size: cover;
+
+
+    }
+
+    .image-box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(0, 255, 255, 0.7);
+    }
+
+    .image-box:hover img {
+      transform: rotate(1deg);
+    }
+
+    .typed-cursor {
+      display: none !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="navbar">
+    <ul>
+      <li><a href="portfolio2.html" id="home-link">Home</a></li>
+      <li><a href="aboutme.html" id="services-link">About me</a></li>
+      <li><a href="skill1.html" id="about-link">Skills</a></li>
+      <li><a href="project.html" id="contact-link">Project</a></li>
+      <li><a href="contact.html" id="contact-link">Contact</a></li>
+    </ul>
+  </div>
+
+
+
+  <section>
+    <div class="sachinhome">
+      <div class="image-box">
+        <img src="images/sachin1.jpeg" alt="" style="height: 400px; width: 330px;">
+      </div>
+      <div class="ss">
+        <h1 id="typed-text" style="height: 50px; width: 550px;"></h1>
+        <div>
+          <p>Aspiring Web Developer | B.Com Student | Front-End Enthusiast</p>
+
+          <a href="#!" class="btn">View Portfolio</a>
+
+          <div class="social-links">
+            <a href="#" target="_blank">GitHub</a>
+            <a href="#" target="_blank">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      </div>
+  </section>
+  <script>const typed = new Typed('#typed-text', {
+      strings: ["Hi, I'm Sachin.", "I'm a Web Developer."],
+      typeSpeed: 50,
+      backSpeed: 30,
+      loop: true
+    });</script>
+
+
+</body>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+
+</html>

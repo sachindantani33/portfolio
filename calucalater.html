@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo of calculater</title>
+</head>
+<body>
+
+    <div>
+        <label for="">a :</label>
+        <input type="text" id="a">
+    </div><br>
+
+    <div>
+        <label for="">b :</label>
+        <input type="text" id="b">
+    </div><br>
+
+    <div>
+        <button type="button" onclick="addition()">+</button>
+        <button type="button" onclick="sub()">-</button>
+        <button type="button" onclick="multi()">*</button>
+        <button type="button" onclick="division()">/</button>
+        <button type="button" onclick="modulo()">%</button>
+    </div>
+
+    <script>
+        function addition()
+        {
+            a = document.getElementById("a").value;
+            b = document.getElementById("b").value;
+
+            addition = parseInt(a) + parseInt(b);
+            document.write("Addition : " +addition);
+        }
+        function sub()
+        {
+            a = document.getElementById("a").value;
+            b = document.getElementById("b").value;
+
+            sub  = parseInt(a) - parseInt(b);
+            document.write("Subtraction : " +sub);
+        }
+
+        function multi()
+        {
+            a = document.getElementById("a").value;
+            b = document.getElementById("b").value;
+
+            multi  = parseInt(a) * parseInt(b);
+            document.write("Multipliaction : " +multi);
+        }
+        function division()
+        {
+            a = document.getElementById("a").value;
+            b = document.getElementById("b").value;
+
+            division  = parseInt(a) / parseInt(b);
+            document.write("devision : " +division);
+        }
+        function modulo()
+        {
+            a = document.getElementById("a").value;
+            b = document.getElementById("b").value;
+
+            modulo  = parseInt(a) / parseInt(b);
+            document.write("devision : " +modulo);
+        }
+    </script>
+    
+</body>
+</html>

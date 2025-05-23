@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo of Months</title>
+</head>
+<body>
+
+    <div>
+        <input type="number" id="sachin">
+        <button onclick="result()">Check</button>
+        <h1 id="dantani"></h1>
+    </div>
+
+    <script>
+        function result(){
+            a = parseInt(document.getElementById("sachin").value);
+
+            if(a==1){
+                document.getElementById("dantani").innerText="January"
+            }
+            else if(a==2){
+                document.getElementById("dantani").innerText="February  "
+            }
+            else if(a==3){
+                document.getElementById("dantani").innerText="March  "
+            }
+            else if(a==4){
+                document.getElementById("dantani").innerText="April  "
+            }
+            else if(a==5){
+                document.getElementById("dantani").innerText="May  "
+            }
+            else if(a==6){
+                document.getElementById("dantani").innerText="June  "
+            }
+            else if(a==7){
+                document.getElementById("dantani").innerText="July  "
+            }
+            else if(a==8){
+                document.getElementById("dantani").innerText="August  "
+            }
+            else if(a==9){
+                document.getElementById("dantani").innerText="September  "
+            }
+            else if(a==10){
+                document.getElementById("dantani").innerText="October  "
+            }
+            else if(a==11){
+                document.getElementById("dantani").innerText="November  "
+            }
+            else if(a==12){
+                document.getElementById("dantani").innerText="December  "
+            }
+            else{
+                document.getElementById("dantani").innerText="Invalid Months"
+            }
+
+        }
+    </script>
+    
+</body>
+</html>

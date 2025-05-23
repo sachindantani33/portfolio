@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="s1"></h1>
+    <script>
+        var sachin=["math","English","Sachin",10,20,30,40,"I Am Coming"];
+
+      var p = (sachin[2]);
+        document.getElementById("s1").innerText=p;
+        
+    </script>
+<div>
+    <input type="text" id="sachin">
+    <button onclick="check()">check</button>
+    <ul id="result"></ul>
+</div>
+<div>
+    <input type="text" id="result1">
+    <button onclick="data()">Check</button>
+    <ul id="s11"></ul>
+</div>
+
+    <script>
+        a =[];
+
+        function check(){
+            dd = document.getElementById("sachin").value;
+            a.push(dd);
+            result();
+        }
+        function result(){
+            document.getElementById("result").innerHTML="";
+            for(i=0;i<a.length;i++){
+                p = "<li>"+a[i]+"</li>"
+                document.getElementById("result").innerHTML+=p
+                document.getElementById("result").style.listStyle="circle"
+            }
+        }
+    </script>
+    <script>
+        a = [];
+        function data(){
+            
+            suhag = document.getElementById("result1").value;
+            a.push(suhag);
+            s11();
+
+
+        }
+        function s11(){
+            d1 = document.getElementById("s11").innerHTML="";
+            for(p=0;p<a.length;p++){
+                sachin1 = "<li>"+a[p]+"</li>";
+                    document.getElementById("s11").innerHTML+=sachin1;
+            }
+        }
+    </script>
+
+</body>
+</html>

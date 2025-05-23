@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" name="" id="sachin">
+    <button onclick="button()">Check</button>
+    <h1 id="dd"></h1>
+
+    <input type="number" id="age">
+    <button onclick="button1()">Check</button>
+    <h1 id="sd"></h1>
+
+    <script>
+        function button(){
+            var s1 = parseInt(document.getElementById("sachin").value);
+            var result= s1<500
+            ? "20%"
+            : "30%";
+            document.getElementById("dd").innerText=result
+
+        }
+
+        function button1(){
+            var ss = parseInt(document.getElementById("age").value);
+
+            var sp=ss>=18
+            ? "Eligible"
+            : "Not Eligible";
+            document.getElementById("sd").innerText=sp;
+            document.getElementById("sd").style.color="red"
+        }
+
+    </script>
+    
+</body>
+</html>

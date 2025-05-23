@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input type="number" id="amount">
+        <button onclick="calculate();">Ckeck Amount</button><br><br>
+
+        <input type="number" id="amount1">
+        <button onclick="calculate1();">Ckeck Amount</button>
+
+        <p>
+            1-499 => 0 <br>
+            500-1000 =>10% <br>
+            1001-3000 =>20% <br>
+            3001-5000 =>30% <br>
+            5001+ => 50%
+        </p>
+
+
+
+    </div>
+
+    <div>
+        <input type="number" id="result">
+        <button onclick="sd()">Ckeck</button>
+    </div>
+
+    <p>
+        18- (Not Eligible)
+        18+ ( Eligible)
+    </p>
+    <div>
+        <input type="number" id="dantani">
+        <button onclick="border()">Go</button>
+
+        <p>
+            35- Fail
+            35+ Pass
+        </p>
+    </div>
+    <div>
+        <input type="number" id="rohan">
+        <button type="button" onclick="mohan();">Click Here</button>
+    </div>
+
+
+    <div>
+        <input type="number" id="ss">
+        <input type="number" id="ss1">
+
+        <button type="button" onclick="sachin()">/</button>
+    </div>
+
+
+
+
+
+
+    <script>
+        function calculate() {
+            var amount = parseInt(document.getElementById("amount").value);
+
+            var result = amount <= 500
+                ? "0%"
+                : "10%";
+            alert(result);
+
+
+
+        }
+        function calculate1() {
+            var sachin = parseInt(document.getElementById("amount1").value);
+            var sachin = sachin >= 500 && sachin <= 1000
+                ?"10%"
+                :"20%";
+                alert(sachin);
+
+        }
+
+        function sd() {
+            var age = parseInt(document.getElementById("result").value);
+
+
+            var sachin = age >= 18
+                ? "Eligible"
+                : "Not Eligible";
+            alert(sachin);
+        }
+        function border() {
+            var amount = parseInt(document.getElementById("dantani").value);
+
+            var sachin1 = amount <= 35
+                ? "Fail"
+                : "Pass";
+            alert(sachin1);
+        }
+
+        function mohan() {
+            var dantani = parseInt(document.getElementById("rohan").value);
+
+            var sachin2 = dantani >= 200 && dantani <= 500
+
+                ? "10%"
+                : "20%";
+            alert(sachin2);
+        }
+
+        // function sachin(){
+        //     var dantani = parseInt(document.getElementById("ss").value);
+        //     var dantani = parseInt(document.getElementById("ss1").value);
+
+        //     var sachin =  
+        // }
+        
+
+
+    </script>
+
+</body>
+
+</html>

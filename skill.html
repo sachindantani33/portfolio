@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/all.css">
+  <style>
+    .header1 {
+      background-color: black;
+      border-bottom: 1px solid gray;
+    }
+
+    .header2 {
+      padding: 15px;
+
+    }
+
+    .header2 a {
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+    }
+
+    .header2 a:hover {
+      color: black;
+      background-color: white;
+      font-weight: bold;
+    }
+
+    .skills-section {
+  background: linear-gradient(to bottom, #0f0f0f, #1a1a1a);
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-title {
+  font-size: 40px;
+  color: #00ffc8;
+  margin-bottom: 60px;
+  font-weight: bold;
+  text-shadow: 0 0 10px #00ffc8;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 40px;
+  padding: 0 20px;
+}
+
+.skill-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 25px rgba(0, 255, 200, 0.1);
+  transition: 0.4s ease;
+  padding: 30px 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0,255,200,0.2) 0%, transparent 70%);
+  animation: rotate 6s linear infinite;
+  z-index: 0;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 0 30px rgba(0, 255, 200, 0.5);
+}
+
+.skill-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.skill-card h3 {
+  font-size: 18px;
+  color: #fff;
+  z-index: 1;
+  position: relative;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+  </style>
+</head>
+
+<body>
+  <header class="header1">
+    <div class="container ">
+      <div class="row ">
+        <div class=" col-md-3"></div>
+        <div class=" header2 col-md-6 nav nav-tabs justify-content-between">
+          <div class="nav-item"><a href="portfolio2.html" class="p-2 nav-link">HOME</a></div>
+          <div class="nav-item"><a href="aboutme.html" class="p-2 nav-link ">ABOUT ME</a></div>
+          <div class="nav-item"><a href="skill1.html" class="p-2 nav-link ">SKILLS</a></div>
+          <div class="nav-item"><a href="project.html" class="p-2 nav-link">PROJECTS</a></div>
+          <div class="nav-item"><a href="" class="p-2 nav-link">Gallery</a></div>
+        </div>
+
+        <div class="col-md-3"></div>
+      </div>
+
+    </div>
+  </header>
+  <!-- Skills Section -->
+<section id="skills" class="skills-section">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-down">My Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" data-bs-toggle="modal" data-bs-target="#html5Modal">
+        <h3>HTML5</h3>
+        <!-- <button class="btn btn-primary" >click</button> -->
+      </div>
+      <div id="html5Modal" class="modal fade">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title">HTML5</h2>
+              <button class="btn btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <p>HTML5 is the standard markup language used to create web pages. It provides structure to your website and supports multimedia elements like audio, video, and canvas without plugins.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+        <h3>CSS3</h3>
+      </div>
+      <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
+        <h3>Bootstrap</h3>
+      </div>
+      <div class="skill-card" data-aos="zoom-in" data-aos-delay="400">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+        <h3>JavaScript</h3>
+      </div>
+      <div class="skill-card" data-aos="zoom-in" data-aos-delay="500">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+        <h3>Python</h3>
+      </div>
+      <div class="skill-card" data-aos="zoom-in" data-aos-delay="600">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
+        <h3>Figma</h3>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<script src="js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

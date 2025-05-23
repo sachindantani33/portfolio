@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo of Array</title>
+</head>
+<body>
+    <input type="text" id="sachin">
+    <button onclick="check()">Check</button>
+    <ul id ="result"></ul>
+    
+    <script>
+        a=[];
+        function check(){
+            
+            ss= document.getElementById("sachin").value;
+            a.push(ss);
+            
+            result();
+        }
+        function result(){
+           pp= document.getElementById("result").innerHTML="";
+            for(p=0;p<a.length;p++){
+                
+                s1= "<li>"+a[p]+"</li>";
+                document.getElementById("result").innerHTML+=s1;
+            }
+            
+        }
+    </script>
+    
+</body>
+</html>

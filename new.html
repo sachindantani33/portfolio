@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar Active Section</title>
+  <style>
+    /* Basic navbar styling */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #333;
+      padding: 10px 0;
+      z-index: 10;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+    }
+
+    .navbar li {
+      margin: 0 20px;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: white;
+      padding: 10px;
+      font-size: 18px;
+    }
+
+    /* Styling for active links */
+    .navbar .active a {
+      color: red; /* Change active link color */
+      font-weight: bold;
+    }
+
+    /* Style for sections */
+    .section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2em;
+      padding: 20px;
+    }
+
+    section {
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <ul>
+      <li><a href="#home" onclick="setActive(this)">Home</a></li>
+      <li><a href="#about" onclick="setActive(this)">About</a></li>
+      <li><a href="#services" onclick="setActive(this)">Services</a></li>
+      <li><a href="#contact" onclick="setActive(this)">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Sections to Scroll -->
+  <section id="home" class="section" style="background-color: lightblue;">
+    <h1>Home</h1>
+  </section>
+  <section id="about" class="section" style="background-color: lightgreen;">
+    <h1>About</h1>
+  </section>
+  <section id="services" class="section" style="background-color: lightcoral;">
+    <h1>Services</h1>
+  </section>
+  <section id="contact" class="section" style="background-color: lightgoldenrodyellow;">
+    <h1>Contact</h1>
+  </section>
+
+  <script>
+    // Function to set active link on click
+    function setActive(element) {
+      // Remove active class from all navbar items
+      let items = document.querySelectorAll('.navbar li');
+      items.forEach(item => {
+        item.classList.remove('active');
+      });
+
+      // Add active class to clicked link's parent <li>
+      element.parentElement.classList.add('active');
+    }
+
+    // Function to highlight the active section on scroll
+    const sections = document.querySelectorAll('.section');
+    const navLinks = document.querySelectorAll('.navbar a');
+
+    window.addEventListener('scroll', () => {
+      let currentSection = "";
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= 0 && rect.bottom >= 0) {
+          currentSection = section.id;
+        }
+      });
+
+      // Update active link based on scroll position
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${currentSection}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo of while loop </title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+</head>
+
+<body style="margin: 20px;">
+    <input type="number" placeholder="First number" class="p-2" id="s1">
+    <input type="number" placeholder="Last number" class="p-2" id="s2">
+    <button onclick="sachin()">Print</button>
+
+    <ul id="data"></ul>
+
+    <script>
+      function sachin(){
+        s1  = parseInt(document.getElementById("s1").value);
+        s2  = parseInt(document.getElementById("s2").value);
+
+        while (s1<=s2){
+            a = "<li>"+s1+"<li>";
+                document.getElementById("data").style.listStyleType="square"
+                document.getElementById("data").innerHTML+=a;
+                s1++;
+        }
+      }
+    </script>
+
+</body>
+
+</html>

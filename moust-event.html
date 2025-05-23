@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo of mouse event</title>
+    <style>
+        .box{
+            height: 300px;
+            width: 300px;
+            background-color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="add()">Check</button>
+    <button ondblclick="add1()">Check</button>
+    <button oncontextmenu="add2()">Check</button>
+    <button onmousedown="add3()">Check</button>
+    <button onmouseup="add4()">Check</button>
+    <button onmouseenter="add5()">Check</button>
+    <button onmouseleave="add6()">Check</button>
+    <button onmousemove="add7()">Check</button>
+    <div>
+        <div onclick="sachin()" onmouseleave="sachin1()" onmouseenter="sachin2()" ondblclick="sachin3()"   class="box" id="ss"></div>
+    </div>
+    
+    <script>
+        function add(){
+            alert("Welcome")
+        }
+        function add1(){
+            alert("Welcome")
+        }
+       
+        function add2(){
+            alert("Welcome")
+        }
+        function add3(){
+            alert("Welcome")
+        }
+        function add4(){
+            alert("Welcome")
+        }
+        function add5(){
+            alert("Welcome")
+        }
+        function add6(){
+            alert("Welcome")
+        }
+        function add7(){
+            alert("Welcome")
+        }
+        function sachin(){
+            document.getElementById("ss").style.backgroundColor="blue";
+            
+        }
+        function sachin1(){
+            document.getElementById("ss").style.backgroundColor="red";
+            
+        }
+        function sachin2(){
+            document.getElementById("ss").style.backgroundColor="yellow";
+            document.getElementById("ss").innerText="Welcome To My Box";
+            document.getElementById("ss").style.fontSize="30px";
+            
+        }
+        function sachin3(){
+            document.getElementById("ss").style.height="500px";
+            document.getElementById("ss").style.width="500px";
+            
+        }
+    </script>
+</body>
+</html>

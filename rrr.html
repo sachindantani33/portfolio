@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>John Doe - Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .hero {
+      padding: 100px 0;
+      text-align: center;
+      background-color: #ffffff;
+    }
+    .hero h1 {
+      font-size: 3rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: #6c757d;
+    }
+    .section-title {
+      text-align: center;
+      margin: 60px 0 30px;
+    }
+    .project-card {
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+    .project-card:hover {
+      transform: scale(1.03);
+    }
+    footer {
+      background-color: #e9ecef;
+      padding: 20px;
+      text-align: center;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">John Doe</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+  <div class="container">
+    <h1>Hello, I'm John Doe</h1>
+    <p>Frontend Developer | Passionate about Web & UI/UX</p>
+    <a href="#projects" class="btn btn-primary mt-3">View Projects</a>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+    <p class="text-center">I'm a self-taught web developer with a passion for creating beautiful and functional websites. I specialize in HTML, CSS, JavaScript, and responsive design. I'm currently learning backend development with Python.</p>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="bg-light">
+  <div class="container">
+    <h2 class="section-title">Skills</h2>
+    <div class="row text-center">
+      <div class="col-md-3">HTML</div>
+      <div class="col-md-3">CSS</div>
+      <div class="col-md-3">JavaScript</div>
+      <div class="col-md-3">Bootstrap</div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title">Projects</h2>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card project-card">
+          <div class="card-body">
+            <h5 class="card-title">Portfolio Website</h5>
+            <p class="card-text">A personal portfolio made with HTML, CSS, and Bootstrap.</p>
+            <a href="#" class="btn btn-outline-primary btn-sm">View</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card project-card">
+          <div class="card-body">
+            <h5 class="card-title">Landing Page</h5>
+            <p class="card-text">A clean and responsive landing page for a startup.</p>
+            <a href="#" class="btn btn-outline-primary btn-sm">View</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card project-card">
+          <div class="card-body">
+            <h5 class="card-title">Weather App</h5>
+            <p class="card-text">A weather app built using JavaScript and OpenWeather API.</p>
+            <a href="#" class="btn btn-outline-primary btn-sm">View</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="bg-light">
+  <div class="container">
+    <h2 class="section-title">Contact Me</h2>
+    <p class="text-center">Email: johndoe@example.com | GitHub: github.com/johndoe</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 John Doe. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="data">
+    <button onclick="add()">check</button>
+    <br>
+    <ul id="list"></ul>
+    <script>
+        // n = 20;
+        var a=[];
+        function add(){
+            var s = document.getElementById("data").value;
+            a.push (s);
+            list();
+        }
+        function list(){
+            document.getElementById("list").innerHTML="";
+            for(s=0;s<a.length;s++){
+                d = "<li>"+a[s]+"</li>";
+                    
+                    document.getElementById("list").innerHTML+=d;
+            }
+        }
+    </script>
+</body>
+</html>

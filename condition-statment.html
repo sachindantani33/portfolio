@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo of Condition-statment</title>
+</head>
+
+<body>
+    <input type="number" name="" id="input">
+    <button onclick="even()">Check</button>
+    <h1 id="sachin"></h1>
+
+    <script>
+        function even(){
+            ss = parseInt(document.getElementById("input").value);
+            if(ss%2==0){
+                document.getElementById("sachin").innerText="This is Even Number"
+                document.getElementById("sachin").style.color="blue";
+            }
+            else{
+                document.getElementById("sachin").innerText="This is Odd Number" 
+                document.getElementById("sachin").style.color="red";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

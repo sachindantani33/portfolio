@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="box border w-50 mt-3 p-4">
+            <div>
+                <label for="">No</label>
+                <input type="text" class="form-control" id="no">
+            </div>
+            <div>
+                <label for="">Name</label>
+                <input type="text" class="form-control" id="name">
+            </div>
+            <div>
+                <label for="">Contact No</label>
+                <input type="number" class="form-control" id="contact">
+            </div>
+            <div>
+                <label for="">City</label>
+                <input type="text" class="form-control" id="city">
+            </div>
+        </div>
+    </div>
+    <div>
+        <button class="btn btn-primary ms-5 mt-3" onclick="add()">Add</button>
+        <button class="btn btn-warning btn-outline-info mt-3">Get</button>
+    </div>
+    <table class="table ">
+        <tr>
+            <th>No</th>
+            <th>Name</th>
+            <th>Contact</th>
+            <th>City</th>
+            <th></th>
+        </tr>
+        <tbody id="tbody"></tbody>
+    </table>
+
+    <script>
+        data = [];
+        function add() {
+            no = document.getElementById("no").value;
+            name = document.getElementById("name").value;
+            contact = document.getElementById("contact").value;
+            city = document.getElementById("city").value;
+            var sachin1 = [no, name, contact, city];
+            data.push(sachin1);
+            get();
+        }
+        function get() {
+            document.getElementById("tbody").innerHTML = "";
+            for (var d in data) {
+                var oc = "deletedata("+d+")";
+                var btn = "<button onclick='"+oc+"' class='btn btn-danger'>Delete</button>"
+                var result = "<tr>";
+                result += "<td>" + data[d][0] + "</td>";
+                result += "<td>" + data[d][1] + "</td>";
+                result += "<td>" + data[d][2] + "</td>";
+                result += "<td>" + data[d][3] + "</td>";
+                result +="<td>"+btn+"</td>"
+                result += "</tr>";
+                result = document.getElementById("tbody").innerHTML += result;
+            }
+        }
+        function deletedata(a){
+            data.splice(a,1)
+            get();
+        }
+    </script>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

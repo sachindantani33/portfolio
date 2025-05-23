@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condition-statment</title>
+</head>
+
+<body>
+    <div>
+        <input type="number" id="positive">
+        <button type="button" onclick="button()">Click</button>
+        <h2 id="sachin"></h2>
+    </div>
+    <div>
+        <input type="text" id="d1">
+        <button onclick="checkno()">Check</button>
+        <h1 id="ss"></h1>
+    </div>
+
+    <script>
+        function button() {
+
+            number = parseInt(document.getElementById("positive").value);
+
+            if (number > 0) {
+                document.getElementById("sachin").innerText = "This Number is Positive";
+                document.getElementById("sachin").style.color = "green"
+            }
+            else {
+                document.getElementById("sachin").innerText = "This Number is Nagative."
+                document.getElementById("sachin").style.color = "red"
+            }
+        }
+
+        function checkno(){
+            tab = parseInt(document.getElementById("d1").value);
+
+            if (tab%2 == 0){
+                document.getElementById("ss").innerText=" even";
+            }
+            else{
+                document.getElementById("ss").innerText=" odd";
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

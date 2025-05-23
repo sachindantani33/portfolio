@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>emo of font-style</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-md-2">
+                <input type="number" id="input" class=" form-control" onchange="sachin1()">
+            </div>
+            <div class="col-md-2">
+                <input type="color" id="color" onchange="sachin2()">
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-light" onclick="bold()" id="bold1">B</button>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-light" onclick="italic()" id="ita">I</button>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-light" onclick="underline()" id="under">U</button>
+            </div>
+            <div class="mt-3">
+                <textarea name="" id="data" rows="10" class="form-control "></textarea>
+            </div>
+        </div>
+    </div> <br>
+
+
+    <script>
+      function sachin1(){
+        var ss =document.getElementById("input").value;
+        document.getElementById("data").style.fontSize=ss+"px";
+      }
+      function sachin2(){
+        var ss1= document.getElementById("color").value;
+        document.getElementById("data").style.color=ss1;
+      }
+      function bold(){
+        var ss3=document.getElementById("data").style.fontWeight="bold";
+        document.getElementById("bold1").setAttribute("class","swe")
+      }
+      function italic(){
+        var ss4=document.getElementById("data").style.fontStyle="italic";
+        document.getElementById("ita").setAttribute("class","ssss")
+      }
+      function underline(){
+        var ss5= document.getElementById("data").style.textDecoration="underline";
+        document.getElementById("ita").setAttribute("class","ssss");
+      }
+    </script>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

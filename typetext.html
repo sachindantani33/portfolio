@@ -1,0 +1,191 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Attractive Image Animation</title>
+  <style>
+    body {
+      background-color: #121212;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .image-box {
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.6s ease, box-shadow 0.6s ease;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+
+    .image-box img {
+      width: 300px;
+      height: auto;
+      display: block;
+      border-radius: 20px;
+      transition: transform 0.6s ease;
+    }
+
+    .image-box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(0, 255, 255, 0.7);
+    }
+
+    .image-box:hover img {
+      transform: rotate(1deg);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="image-box">
+    <img src="images/sachinss.enc" alt="Attractive Image">
+  </div>
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sachin's Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      transition: background 0.5s, color 0.5s;
+    }
+    .gradient-bg {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    }
+    .light-mode {
+      background: #f5f5f5;
+      color: #111;
+    }
+    .light-mode .gradient-bg {
+      background: white;
+    }
+    .light-mode input,
+    .light-mode textarea {
+      color: #111 !important;
+    }
+  </style>
+</head>
+<body class="text-white gradient-bg" id="main-body">
+  <!-- Header Section -->
+  <header class="fixed top-0 left-0 w-full bg-gray-900 bg-opacity-80 z-50 shadow-md">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Sachin</h1>
+      <nav class="space-x-6 hidden md:block">
+        <a href="#home" class="hover:text-blue-400">Home</a>
+        <a href="#about" class="hover:text-blue-400">About</a>
+        <a href="#skills" class="hover:text-blue-400">Skills</a>
+        <a href="#projects" class="hover:text-blue-400">Projects</a>
+        <a href="#contact" class="hover:text-blue-400">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Toggle Button -->
+  <div class="fixed top-4 right-4 z-50 mt-16">
+    <button onclick="toggleMode()" class="bg-gray-700 text-white px-4 py-2 rounded shadow hover:bg-gray-600">
+      Toggle Mode
+    </button>
+  </div>
+
+  <!-- Home Section -->
+  <section class="h-screen flex flex-col justify-center items-center text-center px-4 pt-24" id="home">
+    <img src="IMG-20231024-WA0002.jpg" alt="Sachin's photo" class="w-40 h-40 rounded-full mb-4 border-4 border-white object-cover shadow-lg" />
+    <h1 class="text-5xl font-bold" id="typed-text"></h1>
+    <p class="mt-4 text-xl">I'm a passionate web developer from Mahesana.</p>
+    <a href="#contact" class="mt-6 px-6 py-2 bg-blue-600 rounded hover:bg-blue-700">Hire Me</a>
+  </section>
+
+  <!-- About Section -->
+  <section class="p-10 bg-gray-800" id="about" data-aos="fade-up">
+    <h2 class="text-4xl font-semibold mb-4">About Me</h2>
+    <div class="flex flex-col md:flex-row items-center gap-6">
+      <img src="IMG-20231024-WA0002.jpg" alt="Sachin working" class="w-72 rounded-xl object-cover shadow-lg" />
+      <div>
+        <p class="text-lg">Hi! I'm <strong>Dantani Sachin</strong>, currently pursuing B.Com and passionate about web development. I enjoy turning ideas into functional and elegant websites. My goal is to grow continuously and create experiences that users love.</p>
+        <p class="mt-4 text-lg">I love to learn new technologies, design interfaces in Figma, and build responsive, interactive websites using the latest front-end tools.</p>
+        <a href="cv.pdf" download class="inline-block mt-4 px-4 py-2 bg-green-600 rounded hover:bg-green-700">Download CV</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="p-10" id="skills" data-aos="zoom-in">
+    <h2 class="text-4xl font-semibold mb-6">Skills</h2>
+    <div class="space-y-4">
+      <div><p>HTML</p><div class="bg-gray-700 rounded-full h-4"><div class="bg-blue-500 h-4 rounded-full w-11/12"></div></div></div>
+      <div><p>CSS / Tailwind</p><div class="bg-gray-700 rounded-full h-4"><div class="bg-green-500 h-4 rounded-full w-10/12"></div></div></div>
+      <div><p>JavaScript</p><div class="bg-gray-700 rounded-full h-4"><div class="bg-yellow-400 h-4 rounded-full w-9/12"></div></div></div>
+      <div><p>Python</p><div class="bg-gray-700 rounded-full h-4"><div class="bg-indigo-400 h-4 rounded-full w-7/12"></div></div></div>
+      <div><p>Figma / UI Design</p><div class="bg-gray-700 rounded-full h-4"><div class="bg-pink-400 h-4 rounded-full w-6/12"></div></div></div>
+      <div><p>Bootstrap</p><div class="bg-gray-700 rounded-full h-4"><div class="bg-purple-400 h-4 rounded-full w-7/12"></div></div></div>
+      <div><p>Git & GitHub</p><div class="bg-gray-700 rounded-full h-4"><div class="bg-red-400 h-4 rounded-full w-6/12"></div></div></div>
+      <div><p>VS Code</p><div class="bg-gray-700 rounded-full h-4"><div class="bg-blue-300 h-4 rounded-full w-8/12"></div></div></div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="p-10 bg-gray-900" id="projects" data-aos="fade-up">
+    <h2 class="text-4xl font-semibold mb-6">Projects</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-gray-700 rounded-xl p-4 hover:scale-105 transition-transform duration-300">
+        <h3 class="text-xl font-bold">TCP India Website</h3>
+        <p class="mt-2">Dark-themed responsive site using HTML, CSS, JS.</p>
+      </div>
+      <div class="bg-gray-700 rounded-xl p-4 hover:scale-105 transition-transform duration-300">
+        <h3 class="text-xl font-bold">Portfolio</h3>
+        <p class="mt-2">Personal branding site with animations and modern UI.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="p-10" id="contact" data-aos="zoom-in-up">
+    <h2 class="text-4xl font-semibold mb-6">Contact Me</h2>
+    <form class="space-y-4 max-w-md">
+      <input type="text" placeholder="Your Name" class="w-full p-2 rounded text-black" />
+      <input type="email" placeholder="Your Email" class="w-full p-2 rounded text-black" />
+      <textarea placeholder="Your Message" class="w-full p-2 rounded text-black"></textarea>
+      <button class="bg-blue-600 px-4 py-2 rounded hover:bg-blue-700">Send Message</button>
+    </form>
+    <div class="mt-6 text-2xl space-x-4">
+      <a href="#" class="hover:text-blue-400"><i class="fab fa-facebook"></i></a>
+      <a href="#" class="hover:text-pink-400"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="hover:text-blue-500"><i class="fab fa-linkedin"></i></a>
+      <a href="#" class="hover:text-gray-300"><i class="fab fa-github"></i></a>
+    </div>
+  </section>
+
+  <script>
+    const typed = new Typed('#typed-text', {
+      strings: ["Hi, I'm Sachin.", "I'm a Web Developer.", "I design beautiful websites."],
+      typeSpeed: 50,
+      backSpeed: 30,
+      loop: true
+    });
+
+    AOS.init();
+
+    function toggleMode() {
+      const body = document.getElementById('main-body');
+      body.classList.toggle('light-mode');
+    }
+  </script>
+</body>
+</html>

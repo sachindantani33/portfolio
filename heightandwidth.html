@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <label for="">Height</label>
+        <input type="number" id="height"><br><br>
+
+        <label for="">Width</label>
+        <input type="number" id="width"><br><br>
+
+        <input type="color" id="sachin">
+
+        <button onclick=" creatediv('red');">Red</button>
+        <button onclick=" creatediv('green')">Green</button>
+        <button onclick=" creatediv('blue')">Blue</button>
+        <button onclick=" creatediv('yellow')">yellow</button>
+        <button onclick="create()">Create</button>
+    </div><br>
+    <div id="ele">
+    <h1>Sachin</h1>
+</div>
+
+    <script>
+         function create(){
+             var h = document.getElementById("height").value;
+             var w = document.getElementById("width").value;
+             var c = document.getElementById("sachin").value;
+
+             document.getElementById("ele").style.height = h + "px";
+            document.getElementById("ele").style.width = w + "px";
+           document.getElementById("ele").style.backgroundColor = c;
+         }
+         function creatediv(c){
+            var h = document.getElementById("height").value;
+            var w = document.getElementById("width").value;
+
+            document.getElementById("ele").style.height = h + "px";
+            document.getElementById("ele").style.width = w + "px";
+           document.getElementById("ele").style.backgroundColor = c;
+         }
+
+        //  function greendiv(){
+        //     var h = document.getElementById("height").value;
+        //     var w = document.getElementById("width").value;
+
+        //     document.getElementById("ele").style.height = h +"px";
+        //     document.getElementById("ele").style.width = w +"px";
+        //     document.getElementById("ele").style.backgroundColor="green";
+        //  }
+
+        //  function bluediv(){
+        //     var h = document.getElementById("height").value;
+        //     var w = document.getElementById("width").value;
+
+        //     document.getElementById("ele").style.height = h +"px";
+        //     document.getElementById("ele").style.width = w +"px";
+        //     document.getElementById("ele").style.backgroundColor="blue";
+        //  }
+        
+    </script>
+    
+</body>
+</html>

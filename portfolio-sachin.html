@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sachin's portfolio</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    
+
+    header{
+      display: flex;
+      padding: 15px;
+      
+      
+    }
+     ul {
+      display: flex;
+      gap: 45px;
+      justify-content: center;
+      align-items: center;
+      font-size:large;
+      
+     
+      
+      
+      
+    }
+    ul li{
+      list-style-type: none;
+    
+
+      
+      
+    }
+    ul li a{
+      
+      color: white;
+      text-decoration: none;
+      
+    }
+    ul li a:hover{
+      color: rgb(5, 255, 9);
+      
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #070d0f, #16292f, #102027);
+      color: white;
+      height: 100vh;
+      -display: block;
+      
+
+
+    }
+
+    /* .container {
+      max-width: 700px;
+    } */
+
+    .profile-pic {
+      width: 450px;
+      height: 450px;
+      position: absolute;
+      top: 150px;
+      left: 50px;
+      transition: transform 0.6s ease;
+
+      border-radius: 50%;
+      border: 4px solid white;
+      
+      -box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+      object-fit: contain;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      position: relative;
+      
+      
+    }
+    #typed-text{
+      width: 750px;
+      
+      padding: 0px;
+      position: fixed;
+      margin-left: -100px;
+    
+      
+      
+    }
+
+    .home1{
+    
+      margin-top: 200px;
+      margin-left: 200px;
+      
+    }
+    p {
+      font-size: 1.2rem;
+      margin: 15px 0;
+      margin-top: 50px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      font-size: 1rem;
+      background: #00bcd4;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      margin-top: 20px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #0097a7;
+    }
+
+    .social-links {
+      margin-top: 30px;
+    }
+
+    .social-links a {
+      margin: 0 10px;
+      color: #ccc;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    .social-links a:hover {
+      color: #00bcd4;
+    }
+
+    .sachin {
+      margin-top: -50px;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      display: flex;
+    }
+    .image-box {
+      border-radius: 50%;
+      overflow: hidden;
+      transition: transform 0.6s ease, box-shadow 0.6s ease;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+
+    .image-box img {
+      /* width: 300px;
+      height: auto; */
+      -display: block;
+      -border-radius: 20px;
+      
+    }
+
+    .image-box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(0, 255, 255, 0.7);
+    }
+
+    .image-box:hover img {
+      transform: rotate(1deg);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <b>Sachin</b>
+        </div>
+        <div class="col-md-7">
+          <div>
+            <ul class=" nav nav-pills">
+              <li class="nav-item"><a href="portfolio-sachin.html" class="nav-link active">Home</a></li>
+              <li><a href="aboutme.html">About</a></li>
+              <li><a href="#">Skills</a></li>
+              <li><a href="#">Project</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    
+    
+    </div>
+  </header>
+
+
+  <!-- <div class="home  bg-black">
+        <div class="container">
+            <div >
+                <h3 class="text-white">I'M <span style="color: yellow;">SACHIN</span></h3>
+                <p class="text-white">Aspiring Web Developer | B.Com Student</p>
+                
+                <h3 class="text-white" style="font-size: 60px;">Web <span style="color: yellow;">Devloper</span></h3>
+
+                <b class="d-block w-50 text-white" style="line-height: 25px;">Hello! I'm currently pursuing B.Com with IT. I have experience with web technologies like <span style="color: rgb(11, 241, 249);">HTML, CSS, JavaScript</span>, and <span style="color: rgb(11, 241, 249);">Python</span>. I'm passionate about creating clean and responsive websites.</b>
+            </div>
+       
+        
+            <img src="images/skill.png" class="img1" alt="">
+            <img src="images/skill3.jpg" class="img2" alt="" >
+            <img src="images/skill4.jpg" class="img3">
+
+
+        <div>
+           
+        </div>
+    </div>
+        
+    </div> -->
+  <div class="container sachin">
+    <div class="home1">
+      <div class="image-box">
+    <img src="images/sachinss.enc" alt="Sachin" class="profile-pic" />
+  </div>
+
+    <h1 id="typed-text"></h1>
+    <p>Aspiring Web Developer | B.Com Student | Front-End Enthusiast</p>
+
+    <a href="#!" class="btn">View Portfolio</a>
+
+    <div class="social-links">
+      <a href="https://github.com/yourprofile" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+  </div>
+
+  <!-- <script>
+    const text = "Hi, I'm Dantani Sachin";
+    let i = 0;
+    function typeWriter() {
+      if (i < text.length) {
+        document.getElementById("typed-text").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 100);
+      }
+    }
+    typeWriter();
+  </script> -->
+<script>const typed = new Typed('#typed-text', {
+  strings: ["Hi, I'm Sachin.", "I'm a Web Developer."],
+  typeSpeed: 50,
+  backSpeed: 30,
+  loop: true
+});</script>
+</body>
+
+</html>

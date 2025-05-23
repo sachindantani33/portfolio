@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo of for-ech</title>
+</head>
+<body>
+    <ul id="s1"></ul>
+    <script>
+        a=[];
+        for(i=1;i<=500;i++){
+            a.push(i);
+        }
+        for (sachin in a)
+        {
+            
+        //    ss= document.write(a[sachin]);
+           sd= "<li>"+a[sachin]+"</li>"
+           document.getElementById("s1").innerHTML+=sd;
+           document.getElementById("s1").style.listStyleType="circle"
+        }
+    </script>
+    
+</body>
+</html>

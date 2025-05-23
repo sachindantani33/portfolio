@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo of switch months</title>
+</head>
+
+<body>
+
+    <input type="number" id="number">
+    <button onclick="sachin()">Check</button>
+    <h1 id="result"></h1>
+
+    <script>
+        function sachin() {
+            var s = parseInt(document.getElementById("number").value);
+
+
+            switch (s) {
+                case 1:
+                    document.getElementById("result").innerText = "January";
+                    break
+
+                case 2:
+                    document.getElementById("result").innerText = "February";
+                    break;
+
+                case 3:
+                    document.getElementById("result").innerText = "March";
+                    break;
+
+                case 4:
+                    document.getElementById("result").innerText = "April";
+                    break;
+
+                case 5:
+                    document.getElementById("result").innerText = "May";
+                    break;
+
+                case 6:
+                    document.getElementById("result").innerText = "June";
+                    break;
+
+                case 7:
+                    document.getElementById("result").innerText = "July";
+                    break;
+
+                case 8:
+                    document.getElementById("result").innerText = "August";
+                    break;
+
+                case 9:
+                    document.getElementById("result").innerText = "Saptember";
+                    break;
+
+                case 10:
+                    document.getElementById("result").innerText = "Octomber";
+                    break;
+
+                case 11:
+                    document.getElementById("result").innerText = "November";
+                    break;
+
+                case 12:
+                    document.getElementById("result").innerText = "December";
+                    break;
+
+                default:
+                    document.getElementById("result").innerText = "No Valid Number"
+                     document.getElementById("result").style.color="red"
+            }
+
+        }
+    </script>
+</body>
+
+</html>
