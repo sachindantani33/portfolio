@@ -1,3 +1,6 @@
+<!-- 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +13,7 @@
     /* Reset and base */
     * {
       margin: 0; padding: 0; box-sizing: border-box;
+      transition: background-color 0.3s, color 0.3s;
     }
     body {
       font-family: 'Poppins', sans-serif;
@@ -18,6 +22,8 @@
       line-height: 1.6;
       scroll-behavior: smooth;
       min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
     }
     a {
       color: #58a6ff;
@@ -26,6 +32,36 @@
     }
     a:hover {
       color: #1f6feb;
+    }
+
+    /* Dark mode styles */
+    body.light-mode {
+      background: #f9f9f9;
+      color: #222;
+    }
+    body.light-mode a {
+      color: #0a66c2;
+    }
+    body.light-mode a:hover {
+      color: #004a99;
+    }
+    body.light-mode nav {
+      background: #e3e8f1;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    body.light-mode #about, body.light-mode #contact, body.light-mode .project-card {
+      background: #fff;
+      color: #222;
+      box-shadow: 0 0 15px #8bbf8daa;
+    }
+    body.light-mode .btn-primary {
+      background-color: #2ea043;
+      color: #fff;
+      box-shadow: 0 5px 15px #2ea043cc;
+    }
+    body.light-mode .btn-primary:hover {
+      background-color: #238636;
+      box-shadow: 0 8px 20px #238636cc;
     }
 
     /* Container */
@@ -46,11 +82,13 @@
       top: 0;
       z-index: 100;
       box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+      transition: background-color 0.3s, box-shadow 0.3s;
     }
     nav .logo {
       font-weight: 700;
       font-size: 1.5rem;
       color: #58a6ff;
+      cursor: default;
     }
     nav ul {
       list-style: none;
@@ -59,6 +97,30 @@
     }
     nav ul li {
       font-weight: 600;
+    }
+
+    /* Dark mode toggle */
+    #darkToggle {
+      background: transparent;
+      border: 2px solid #58a6ff;
+      border-radius: 25px;
+      padding: 0.3rem 0.8rem;
+      font-weight: 600;
+      color: #58a6ff;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    #darkToggle:hover {
+      background: #58a6ff;
+      color: #0d1117;
+    }
+    body.light-mode #darkToggle {
+      border-color: #2ea043;
+      color: #2ea043;
+    }
+    body.light-mode #darkToggle:hover {
+      background: #2ea043;
+      color: #fff;
     }
 
     /* Hero */
@@ -70,42 +132,36 @@
       align-items: center;
       text-align: center;
       padding: 0 1rem;
+      position: relative;
+      overflow: hidden;
     }
     .hero h1 {
       font-size: 3rem;
       color: #58a6ff;
       margin-bottom: 0.5rem;
+      filter: drop-shadow(0 0 5px #58a6ffaa);
     }
     .hero h2 {
       font-weight: 300;
       color: #8b949e;
       margin-bottom: 1.5rem;
       height: 28px; /* for typing effect */
-    }
-    /* Typing effect */
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
+      min-width: 220px;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #58a6ff;
+      animation: blinkCaret 0.75s step-end infinite;
     }
     @keyframes blinkCaret {
       0%, 100% { border-color: transparent }
       50% { border-color: #58a6ff }
-    }
-    .typing {
-      border-right: 2px solid #58a6ff;
-      white-space: nowrap;
-      overflow: hidden;
-      display: inline-block;
-      animation:
-        typing 3s steps(30, end),
-        blinkCaret 0.75s step-end infinite;
-      max-width: 22ch;
     }
     .hero p {
       max-width: 600px;
       font-size: 1.1rem;
       color: #8b949e;
       margin-bottom: 2rem;
+      filter: drop-shadow(0 0 2px #000);
     }
     .btn-primary {
       background-color: #238636;
@@ -115,8 +171,10 @@
       font-weight: 600;
       cursor: pointer;
       border: none;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
       box-shadow: 0 5px 15px #238636aa;
+      filter: drop-shadow(0 0 10px #238636cc);
+      user-select: none;
     }
     .btn-primary:hover {
       background-color: #2ea043;
@@ -134,6 +192,8 @@
       gap: 2rem;
       align-items: center;
       color: #c9d1d9;
+      filter: drop-shadow(0 0 15px #238636cc);
+      transition: background-color 0.3s, color 0.3s;
     }
     #about img {
       border-radius: 12px;
@@ -142,6 +202,12 @@
       object-fit: cover;
       box-shadow: 0 0 15px #238636aa;
       flex-shrink: 0;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    #about img:hover {
+      transform: scale(1.05) rotate(3deg);
+      box-shadow: 0 0 25px #2ea043cc;
     }
     #about .text {
       flex: 1;
@@ -149,6 +215,7 @@
     #about h2 {
       color: #58a6ff;
       margin-bottom: 1rem;
+      filter: drop-shadow(0 0 5px #58a6ffbb);
     }
     #about p {
       font-size: 1.1rem;
@@ -164,6 +231,7 @@
       text-align: center;
       color: #58a6ff;
       margin-bottom: 2rem;
+      filter: drop-shadow(0 0 5px #58a6ffbb);
     }
     .skills-grid {
       display: grid;
@@ -175,6 +243,13 @@
       position: relative;
       width: 120px;
       height: 120px;
+      cursor: default;
+      filter: drop-shadow(0 0 5px #238636aa);
+      transition: transform 0.3s ease;
+    }
+    .skill:hover {
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 15px #2ea043cc);
     }
     .skill svg {
       transform: rotate(-90deg);
@@ -188,6 +263,7 @@
     }
     .skill .bg {
       stroke: #30363d;
+      transition: stroke 0.3s ease;
     }
     .skill .progress {
       stroke: #238636;
@@ -222,6 +298,7 @@
       text-align: center;
       color: #58a6ff;
       margin-bottom: 2rem;
+      filter: drop-shadow(0 0 5px #58a6ffbb);
     }
     .projects-grid {
       display: grid;
@@ -235,6 +312,7 @@
       overflow: hidden;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
+      filter: drop-shadow(0 0 8px #238636aa);
     }
     .project-card:hover {
       transform: translateY(-10px);
@@ -257,6 +335,7 @@
     .project-content h3 {
       margin-bottom: 0.5rem;
       color: #58a6ff;
+      filter: drop-shadow(0 0 5px #58a6ffbb);
     }
     .project-content p {
       font-size: 0.95rem;
@@ -271,47 +350,60 @@
       padding: 3rem 2rem;
       border-radius: 12px;
       color: #c9d1d9;
+      filter: drop-shadow(0 0 15px #238636cc);
+      transition: background-color 0.3s, color 0.3s;
     }
     #contact h2 {
       color: #58a6ff;
       text-align: center;
       margin-bottom: 2rem;
+      filter: drop-shadow(0 0 5px #58a6ffbb);
     }
-    form {
+    #contact form {
       max-width: 500px;
       margin: auto;
       display: flex;
       flex-direction: column;
-      gap: 1.2rem;
+      gap: 1rem;
     }
-    form input, form textarea {
+    #contact input, #contact textarea {
       padding: 0.75rem 1rem;
       border-radius: 8px;
       border: none;
       background: #0d1117;
       color: #c9d1d9;
       font-size: 1rem;
-      box-shadow: 0 0 10px #23863666 inset;
-      transition: box-shadow 0.3s ease;
       resize: none;
+      box-shadow: inset 0 0 5px #238636cc;
+      transition: background-color 0.3s, color 0.3s;
     }
-    form input:focus, form textarea:focus {
-      outline: none;
-      box-shadow: 0 0 12px #2ea043;
+    body.light-mode #contact input, body.light-mode #contact textarea {
+      background: #f0f0f0;
+      color: #222;
+      box-shadow: inset 0 0 5px #2ea043cc;
+    }
+    #contact input:focus, #contact textarea:focus {
+      outline: 2px solid #238636;
       background: #161b22;
+      color: #c9d1d9;
     }
-    form button {
+    body.light-mode #contact input:focus, body.light-mode #contact textarea:focus {
+      background: #c4f0c5;
+      color: #238636;
+      outline: 2px solid #2ea043;
+    }
+    #contact button {
       background-color: #238636;
       border: none;
-      padding: 0.75rem 2rem;
+      padding: 0.75rem 1.5rem;
       border-radius: 50px;
-      color: #f0f6fc;
       font-weight: 600;
+      color: #f0f6fc;
       cursor: pointer;
-      box-shadow: 0 5px 15px #238636aa;
-      transition: background-color 0.3s ease;
+      box-shadow: 0 5px 15px #238636cc;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
     }
-    form button:hover {
+    #contact button:hover {
       background-color: #2ea043;
       box-shadow: 0 8px 20px #2ea043cc;
     }
@@ -319,55 +411,62 @@
     /* Footer */
     footer {
       text-align: center;
-      padding: 1.5rem 2rem;
-      background: #161b22;
-      color: #8b949e;
+      margin: 3rem 0 1rem;
       font-size: 0.9rem;
-      user-select: none;
-      margin-top: 4rem;
+      color: #8b949e;
+      filter: drop-shadow(0 0 3px #000);
     }
 
     /* Responsive */
     @media (max-width: 768px) {
+      nav ul {
+        gap: 1rem;
+      }
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .hero h2 {
+        font-size: 1.1rem;
+      }
       #about {
         flex-direction: column;
         text-align: center;
       }
       #about img {
         margin-bottom: 1.5rem;
-        width: 200px;
-        height: 200px;
+      }
+      .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
       }
     }
   </style>
 </head>
 <body>
-
   <nav>
-    <div class="logo">Sachin</div>
+    <div class="logo">Dantani Sachin</div>
     <ul>
-      <li><a href="#about">About</a></li>
+      <li><a href="#about">About Me</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <button id="darkToggle" aria-label="Toggle Dark Mode">Light Mode</button>
   </nav>
 
-  <section class="hero container" id="hero">
+  <section class="hero container" id="home">
     <h1>Hello, I'm Sachin</h1>
-    <h2><span class="typing"></span></h2>
-    <p>A passionate Web Developer & Python enthusiast crafting modern digital experiences.</p>
-    <button class="btn-primary" onclick="scrollToSection('contact')">Get In Touch</button>
+    <h2 id="typing"></h2>
+    <p>Creative web developer passionate about crafting beautiful and performant websites.</p>
+    <button class="btn-primary" onclick="window.location.href='#contact'">Hire Me</button>
   </section>
 
   <section id="about" class="container">
-    <img src="https://avatars.githubusercontent.com/u/583231?v=4" alt="Sachin" />
+    <img src="https://avatars.githubusercontent.com/u/67550620?v=4" alt="Sachin Dantani" />
     <div class="text">
       <h2>About Me</h2>
       <p>
-        I am Sachin Dantani, a dedicated B.Com student and a passionate web developer from Mahesana.  
-        I love creating beautiful, performant websites and learning new technologies like Python and JavaScript.  
-        I enjoy problem-solving and turning ideas into reality through code.
+        I am Sachin Dantani, a web developer with experience in creating responsive and user-friendly websites.
+        I love to work on new technologies and learn continuously to improve my skills.
       </p>
     </div>
   </section>
@@ -375,37 +474,37 @@
   <section id="skills" class="container">
     <h2>My Skills</h2>
     <div class="skills-grid">
-      <div class="skill" data-percent="90">
-        <svg>
+      <div class="skill" data-percent="90" aria-label="HTML 90 percent skill">
+        <svg viewBox="0 0 120 120">
           <circle class="bg" cx="60" cy="60" r="54"></circle>
           <circle class="progress" cx="60" cy="60" r="54"></circle>
         </svg>
         <div class="skill-name">HTML</div>
-        <div class="skill-percent">0%</div>
+        <div class="skill-percent">90%</div>
       </div>
-      <div class="skill" data-percent="85">
-        <svg>
+      <div class="skill" data-percent="85" aria-label="CSS 85 percent skill">
+        <svg viewBox="0 0 120 120">
           <circle class="bg" cx="60" cy="60" r="54"></circle>
           <circle class="progress" cx="60" cy="60" r="54"></circle>
         </svg>
         <div class="skill-name">CSS</div>
-        <div class="skill-percent">0%</div>
+        <div class="skill-percent">85%</div>
       </div>
-      <div class="skill" data-percent="75">
-        <svg>
+      <div class="skill" data-percent="75" aria-label="JavaScript 75 percent skill">
+        <svg viewBox="0 0 120 120">
           <circle class="bg" cx="60" cy="60" r="54"></circle>
           <circle class="progress" cx="60" cy="60" r="54"></circle>
         </svg>
         <div class="skill-name">JavaScript</div>
-        <div class="skill-percent">0%</div>
+        <div class="skill-percent">75%</div>
       </div>
-      <div class="skill" data-percent="65">
-        <svg>
+      <div class="skill" data-percent="70" aria-label="React 70 percent skill">
+        <svg viewBox="0 0 120 120">
           <circle class="bg" cx="60" cy="60" r="54"></circle>
           <circle class="progress" cx="60" cy="60" r="54"></circle>
         </svg>
-        <div class="skill-name">Python</div>
-        <div class="skill-percent">0%</div>
+        <div class="skill-name">React</div>
+        <div class="skill-percent">70%</div>
       </div>
     </div>
   </section>
@@ -413,25 +512,25 @@
   <section id="projects" class="container">
     <h2>Projects</h2>
     <div class="projects-grid">
-      <div class="project-card">
-        <img src="https://picsum.photos/seed/tcp/400/180" alt="TCP India Website" />
-        <div class="project-content">
-          <h3>TCP India Website</h3>
-          <p>A responsive website with dark mode and smooth animations using Bootstrap & JS.</p>
-        </div>
-      </div>
-      <div class="project-card">
-        <img src="https://picsum.photos/seed/portfolio/400/180" alt="Portfolio Website" />
+      <div class="project-card" tabindex="0" aria-label="Project: Portfolio Website">
+        <img src="https://via.placeholder.com/400x180.png?text=Portfolio+Website" alt="Portfolio Website Screenshot" />
         <div class="project-content">
           <h3>Portfolio Website</h3>
-          <p>A personal portfolio showcasing skills and projects with modern UI design.</p>
+          <p>Personal portfolio built with HTML, CSS, and JavaScript showcasing my projects and skills.</p>
         </div>
       </div>
-      <div class="project-card">
-        <img src="https://picsum.photos/seed/assignment/400/180" alt="Cooperation Assignment" />
+      <div class="project-card" tabindex="0" aria-label="Project: E-commerce Website">
+        <img src="https://via.placeholder.com/400x180.png?text=E-commerce+Website" alt="E-commerce Website Screenshot" />
         <div class="project-content">
-          <h3>Cooperation Assignment</h3>
-          <p>A detailed assignment project with visuals and structured content.</p>
+          <h3>E-commerce Website</h3>
+          <p>Developed a responsive online store using React and Node.js with payment integration.</p>
+        </div>
+      </div>
+      <div class="project-card" tabindex="0" aria-label="Project: Blog Platform">
+        <img src="https://via.placeholder.com/400x180.png?text=Blog+Platform" alt="Blog Platform Screenshot" />
+        <div class="project-content">
+          <h3>Blog Platform</h3>
+          <p>A blogging platform allowing users to create and share posts with a clean UI.</p>
         </div>
       </div>
     </div>
@@ -439,81 +538,736 @@
 
   <section id="contact" class="container">
     <h2>Contact Me</h2>
-    <form onsubmit="event.preventDefault(); alert('Message sent! Thank you!'); this.reset();">
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea rows="5" placeholder="Your Message" required></textarea>
+    <form id="contactForm" aria-label="Contact form">
+      <input type="text" name="name" placeholder="Your Name" required aria-required="true" />
+      <input type="email" name="email" placeholder="Your Email" required aria-required="true" />
+      <textarea name="message" rows="5" placeholder="Your Message" required aria-required="true"></textarea>
       <button type="submit">Send Message</button>
     </form>
   </section>
 
   <footer>
-    &copy; 2025 Dantani Sachin | All Rights Reserved
+    &copy; 2025 Dantani Sachin. All rights reserved.
   </footer>
 
   <script>
-    // Typing effect text
-    const typingTexts = [
-      'Web Developer.',
-      'Python Enthusiast.',
-      'Problem Solver.',
-      'Tech Learner.'
-    ];
-    let typingIndex = 0;
-    let charIndex = 0;
-    const typingElement = document.querySelector('.typing');
-
-    function type() {
-      if (charIndex < typingTexts[typingIndex].length) {
-        typingElement.textContent += typingTexts[typingIndex].charAt(charIndex);
-        charIndex++;
-        setTimeout(type, 150);
+    // Dark mode toggle
+    const toggleBtn = document.getElementById('darkToggle');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+      if(document.body.classList.contains('light-mode')) {
+        toggleBtn.textContent = 'Dark Mode';
+        toggleBtn.setAttribute('aria-label', 'Switch to Dark Mode');
       } else {
-        setTimeout(erase, 2000);
+        toggleBtn.textContent = 'Light Mode';
+        toggleBtn.setAttribute('aria-label', 'Switch to Light Mode');
       }
-    }
-    function erase() {
-      if (charIndex > 0) {
-        typingElement.textContent = typingTexts[typingIndex].substring(0, charIndex - 1);
-        charIndex--;
-        setTimeout(erase, 100);
-      } else {
-        typingIndex = (typingIndex + 1) % typingTexts.length;
-        setTimeout(type, 500);
-      }
-    }
-    document.addEventListener('DOMContentLoaded', () => {
-      if (typingTexts.length) type();
     });
 
-    // Animate circular skill bars
+    // Typing animation for hero subtitle
+    const typingElement = document.getElementById('typing');
+    const phrases = ['Web Developer', 'Creative Coder', 'Tech Enthusiast', 'Problem Solver'];
+    let i = 0, charIndex = 0, isDeleting = false;
+
+    function type() {
+      const current = phrases[i];
+      if(!isDeleting) {
+        typingElement.textContent = current.substring(0, charIndex + 1);
+        charIndex++;
+        if(charIndex === current.length) {
+          isDeleting = true;
+          setTimeout(type, 1500);
+          return;
+        }
+      } else {
+        typingElement.textContent = current.substring(0, charIndex - 1);
+        charIndex--;
+        if(charIndex === 0) {
+          isDeleting = false;
+          i = (i + 1) % phrases.length;
+        }
+      }
+      setTimeout(type, isDeleting ? 100 : 150);
+    }
+    type();
+
+    // Skills circular progress bars animation
+    const skills = document.querySelectorAll('.skill');
+    skills.forEach(skill => {
+      const circle = skill.querySelector('.progress');
+      const percent = skill.getAttribute('data-percent');
+      const radius = 54;
+      const circumference = 2 * Math.PI * radius;
+      const offset = circumference - (percent / 100) * circumference;
+      setTimeout(() => {
+        circle.style.strokeDashoffset = offset;
+      }, 300);
+    });
+
+    // Contact form submission handler (simple alert for demo)
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for reaching out! I will get back to you soon.');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
+
+
+  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dantani Sachin | Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <!-- FontAwesome for Social Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    /* Reset and base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0d1117, #161b22);
+      color: #c9d1d9;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: #58a6ff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #1f6feb;
+    }
+
+    /* Dark mode styles */
+    body.light-mode {
+      background: #f9f9f9;
+      color: #222;
+    }
+
+    body.light-mode a {
+      color: #0a66c2;
+    }
+
+    body.light-mode a:hover {
+      color: #004a99;
+    }
+
+    body.light-mode nav {
+      background: #e3e8f1;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    body.light-mode #about,
+    body.light-mode #contact,
+    body.light-mode .project-card body.light-mode #skills,
+    body.light-mode #projects {
+      background: #fff;
+      color: #222;
+      box-shadow: 0 0 15px #8bbf8daa;
+    }
+
+    body.light-mode #skills {
+      background: #fff;
+      color: #222;
+      box-shadow: 0 0 15px #8bbf8daa;
+    }
+
+    body.light-mode #skills .skill {
+      background: #f0f5f9;
+      color: #222;
+      box-shadow: 0 0 15px #8bbf8daa;
+    }
+
+    body.light-mode #skills .skill:hover {
+      background: #2ea043;
+      color: white;
+      box-shadow: 0 0 25px #238636dd;
+    }
+
+    body.light-mode #projects {
+      background: #fff;
+      color: #222;
+      box-shadow: 0 0 15px #8bbf8daa;
+    }
+
+    body.light-mode #projects .project-card {
+      background: #f0f5f9;
+      color: #222;
+      box-shadow: 0 0 15px #8bbf8daa;
+      transition: transform 0.3s ease;
+    }
+
+    body.light-mode #contact {
+      background: #fff;
+      color: #222;
+      box-shadow: 0 0 15px #8bbf8daa;
+    }
+
+    body.light-mode #contact form input,
+    body.light-mode #contact form textarea {
+      background: #f9f9f9;
+      color: #222;
+    }
+
+    body.light-mode #contact form button {
+      background-color: #2ea043;
+      color: #fff;
+      box-shadow: 0 5px 15px #2ea043cc;
+    }
+
+    body.light-mode #contact form button:hover {
+      background-color: #238636;
+      box-shadow: 0 8px 20px #238636cc;
+    }
+
+    body.light-mode #contact a {
+      color: #0a66c2;
+    }
+
+    body.light-mode .btn-primary {
+      background-color: #2ea043;
+      color: #fff;
+      box-shadow: 0 5px 15px #2ea043cc;
+    }
+
+    body.light-mode .btn-primary:hover {
+      background-color: #238636;
+      box-shadow: 0 8px 20px #238636cc;
+    }
+
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 1rem 2rem 4rem;
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: #161b22;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+
+    nav .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #58a6ff;
+      cursor: default;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav ul li {
+      font-weight: 600;
+    }
+
+    /* Dark mode toggle */
+    #darkToggle {
+      background: transparent;
+      border: 2px solid #58a6ff;
+      border-radius: 25px;
+      padding: 0.3rem 0.8rem;
+      font-weight: 600;
+      color: #58a6ff;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #darkToggle:hover {
+      background: #58a6ff;
+      color: #0d1117;
+    }
+
+    body.light-mode #darkToggle {
+      border-color: #2ea043;
+      color: #2ea043;
+    }
+
+    body.light-mode #darkToggle:hover {
+      background: #2ea043;
+      color: #fff;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 1rem;
+      position: relative;
+      overflow: hidden;
+      color: #58a6ff;
+      filter: drop-shadow(0 0 15px #238636cc);
+    }
+
+    .hero h1 {
+      font-size: 3.8rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-shadow: 0 0 8px #238636cc;
+    }
+
+    .hero h2 {
+      font-weight: 400;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      height: 40px;
+      /* for typing effect */
+      min-width: 260px;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid #58a6ff;
+      animation: blinkCaret 0.7s step-end infinite;
+      color: #a3d9ff;
+      text-shadow: 0 0 10px #58a6ffbb;
+    }
+
+    @keyframes blinkCaret {
+
+      0%,
+      100% {
+        border-color: transparent
+      }
+
+      50% {
+        border-color: #58a6ff
+      }
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: 1.2rem;
+      color: #8b949e;
+      margin-bottom: 2.5rem;
+      filter: drop-shadow(0 0 5px #000);
+    }
+
+    .btn-primary {
+      background-color: #238636;
+      color: #f0f6fc;
+      padding: 0.9rem 2.5rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      border: none;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 5px 15px #238636cc;
+      filter: drop-shadow(0 0 12px #238636cc);
+      user-select: none;
+      letter-spacing: 1.2px;
+    }
+
+    .btn-primary:hover {
+      background-color: #2ea043;
+      box-shadow: 0 10px 25px #2ea043cc;
+      transform: scale(1.05);
+    }
+
+    /* Social icons below hero */
+    .social-icons {
+      margin-top: 1rem;
+      display: flex;
+      gap: 1.5rem;
+      color: #58a6ff;
+      filter: drop-shadow(0 0 8px #238636cc);
+    }
+
+    .social-icons a {
+      font-size: 1.6rem;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #2ea043;
+      transform: scale(1.2);
+    }
+
+    /* About Section */
+    #about {
+      background: #161b22;
+      padding: 3rem 2rem;
+      border-radius: 12px;
+      margin-top: 3rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      color: #c9d1d9;
+      filter: drop-shadow(0 0 15px #238636cc);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    #about img {
+      border-radius: 12px;
+      width: 280px;
+      height: 280px;
+      object-fit: cover;
+      box-shadow: 0 0 15px #238636aa;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    #about img:hover {
+      transform: scale(1.05) rotate(3deg);
+      box-shadow: 0 0 25px #2ea043cc;
+    }
+
+    #about .text {
+      flex: 1;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #8b949e;
+    }
+
+    /* Skills Section */
+    #skills {
+      margin-top: 3rem;
+      padding: 2rem;
+      background: #0d1117;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #238636cc;
+    }
+
+    #skills h3 {
+      font-size: 2.2rem;
+      color: #58a6ff;
+      margin-bottom: 1rem;
+      text-align: center;
+      filter: drop-shadow(0 0 10px #238636cc);
+    }
+
+    #skills .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+
+    .skill {
+      flex: 1 1 150px;
+      background: #161b22;
+      border-radius: 10px;
+      padding: 1rem 1.5rem;
+      color: #a3d9ff;
+      text-align: center;
+      box-shadow: 0 0 15px #238636bb;
+      transition: background-color 0.3s ease;
+      cursor: default;
+      position: relative;
+    }
+
+    .skill:hover {
+      background: #238636cc;
+      color: white;
+      box-shadow: 0 0 25px #2ea043dd;
+    }
+
+    .skill h4 {
+      margin-bottom: 0.6rem;
+      font-weight: 600;
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+    }
+
+    .progress-bar {
+      height: 8px;
+      width: 100%;
+      background: #0d1117;
+      border-radius: 50px;
+      overflow: hidden;
+      box-shadow: inset 0 0 5px #0a192f;
+    }
+
+    .progress-bar span {
+      display: block;
+      height: 100%;
+      background: #2ea043;
+      width: 0%;
+      border-radius: 50px;
+      transition: width 1.5s ease-in-out;
+      box-shadow: 0 0 8px #2ea043cc;
+    }
+
+    /* Floating background shapes for hero */
+    .floating-shape {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(46, 160, 67, 0.3);
+      animation: floatUpDown 6s ease-in-out infinite;
+      filter: blur(2px);
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    @keyframes floatUpDown {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav ul {
+        gap: 1rem;
+      }
+
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+
+      #about {
+        flex-direction: column;
+      }
+
+      #about img {
+        width: 200px;
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">Dantani Sachin</div>
+    <ul>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button id="darkToggle">Toggle Dark Mode</button>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Dantani Sachin</h1>
+    <h2 id="typed-text"></h2>
+    <p>I am a Web Developer passionate about crafting beautiful and efficient web experiences.</p>
+    <button class="btn-primary">Hire Me</button>
+
+    <div class="social-icons" aria-label="social links">
+      <a href="https://github.com/dantanisachin" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/dantanisachin" target="_blank" title="LinkedIn"><i
+          class="fab fa-linkedin"></i></a>
+      <a href="https://twitter.com/dantanisachin" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+    </div>
+
+    <!-- Floating shapes -->
+    <div class="floating-shape" style="width:40px; height:40px; left:10%; top:30%; animation-delay: 0s;"></div>
+    <div class="floating-shape" style="width:60px; height:60px; left:75%; top:20%; animation-delay: 2s;"></div>
+    <div class="floating-shape" style="width:30px; height:30px; left:50%; top:80%; animation-delay: 4s;"></div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="container">
+    <img src="https://i.ibb.co/Q9yv5Yn/IMG-20221113-114916-01-01.jpg" alt="Dantani Sachin" />
+    <div class="text">
+      <p>Hey there! I'm a passionate Web Developer specializing in frontend and backend technologies. I love turning
+        ideas into beautiful websites and interactive web apps.</p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="container">
+    <h3>Skills</h3>
+    <div class="skills-container">
+      <div class="skill">
+        <h4>HTML</h4>
+        <div class="progress-bar"><span data-width="90%"></span></div>
+      </div>
+      <div class="skill">
+        <h4>CSS</h4>
+        <div class="progress-bar"><span data-width="80%"></span></div>
+      </div>
+      <div class="skill">
+        <h4>JavaScript</h4>
+        <div class="progress-bar"><span data-width="85%"></span></div>
+      </div>
+      <div class="skill">
+        <h4>Bootstrap</h4>
+        <div class="progress-bar"><span data-width="75%"></span></div>
+      </div>
+      <div class="skill">
+        <h4>Figma</h4>
+        <div class="progress-bar"><span data-width="70%"></span></div>
+      </div>
+      <div class="skill">
+        <h4>jQuery</h4>
+        <div class="progress-bar"><span data-width="65%"></span></div>
+      </div>
+    </div>
+  </section>
+  <section id="projects" class="container"
+    style="margin-top: 3rem; padding: 2rem; background: #161b22; border-radius: 12px; box-shadow: 0 0 20px #238636cc; color: #c9d1d9;">
+    <h3 style="color: #58a6ff; text-align: center; margin-bottom: 1.5rem;">Projects</h3>
+    <div class="projects-grid"
+      style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+
+      <div class="project-card"
+        style="background: #0d1117; border-radius: 12px; padding: 1.5rem; box-shadow: 0 0 15px #2ea043cc; transition: transform 0.3s ease;">
+        <h4>Portfolio Website</h4>
+        <p>A personal responsive portfolio website built with HTML, CSS & JavaScript.</p>
+        <a href="https://github.com/dantanisachin/portfolio" target="_blank"
+          style="color:#58a6ff; font-weight: 600;">GitHub Repo</a>
+      </div>
+
+      <div class="project-card"
+        style="background: #0d1117; border-radius: 12px; padding: 1.5rem; box-shadow: 0 0 15px #2ea043cc; transition: transform 0.3s ease;">
+        <h4>Todo App</h4>
+        <p>A simple task management app with CRUD functionality using JavaScript and localStorage.</p>
+        <a href="https://github.com/dantanisachin/todo-app" target="_blank"
+          style="color:#58a6ff; font-weight: 600;">GitHub Repo</a>
+      </div>
+
+      <div class="project-card"
+        style="background: #0d1117; border-radius: 12px; padding: 1.5rem; box-shadow: 0 0 15px #2ea043cc; transition: transform 0.3s ease;">
+        <h4>Weather Dashboard</h4>
+        <p>Displays current weather and forecast using OpenWeather API with responsive design.</p>
+        <a href="https://github.com/dantanisachin/weather-dashboard" target="_blank"
+          style="color:#58a6ff; font-weight: 600;">GitHub Repo</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Contact Section -->
+  <section id="contact" class="container"
+    style="margin-top: 3rem; padding: 2rem; background: #161b22; border-radius: 12px; box-shadow: 0 0 20px #238636cc; color: #c9d1d9;">
+    <h3 style="color: #58a6ff; text-align: center; margin-bottom: 1.5rem;">Contact Me</h3>
+
+    <form style="max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;">
+      <input type="text" placeholder="Your Name" required
+        style="padding: 0.8rem; border-radius: 8px; border: none; font-size: 1rem;">
+      <input type="email" placeholder="Your Email" required
+        style="padding: 0.8rem; border-radius: 8px; border: none; font-size: 1rem;">
+      <textarea placeholder="Your Message" rows="5" required
+        style="padding: 0.8rem; border-radius: 8px; border: none; font-size: 1rem;"></textarea>
+      <button type="submit"
+        style="padding: 0.8rem; border-radius: 8px; border: none; background-color: #238636; color: white; font-size: 1.1rem; cursor: pointer; transition: background-color 0.3s ease;">Send
+        Message</button>
+    </form>
+
+    <div style="text-align: center; margin-top: 2rem;">
+      <p>Or reach me on:</p>
+      <a href="https://github.com/yourusername" target="_blank"
+        style="margin: 0 10px; color: #58a6ff; font-size: 1.5rem; text-decoration: none;">GitHub</a>
+      <a href="https://linkedin.com/in/yourusername" target="_blank"
+        style="margin: 0 10px; color: #0a66c2; font-size: 1.5rem; text-decoration: none;">LinkedIn</a>
+      <a href="mailto:youremail@example.com"
+        style="margin: 0 10px; color: #dd4b39; font-size: 1.5rem; text-decoration: none;">Email</a>
+    </div>
+  </section>
+
+
+  <script>
+    // Typing effect for hero h2
+    const phrases = ["Web Developer", "Frontend Enthusiast", "Backend Coder", "UI/UX Designer"];
+    let i = 0, j = 0;
+    let currentPhrase = '';
+    let isDeleting = false;
+    const speed = 100;
+    const typedText = document.getElementById('typed-text');
+
+    function type() {
+      if (i >= phrases.length) i = 0;
+      currentPhrase = phrases[i];
+
+      if (!isDeleting) {
+        typedText.textContent = currentPhrase.substring(0, j + 1);
+        j++;
+        if (j === currentPhrase.length) {
+          isDeleting = true;
+          setTimeout(type, 1500);
+          return;
+        }
+      } else {
+        typedText.textContent = currentPhrase.substring(0, j - 1);
+        j--;
+        if (j === 0) {
+          isDeleting = false;
+          i++;
+        }
+      }
+      setTimeout(type, speed);
+    }
+    type();
+
+    // Animate skill progress bars when visible
     function animateSkills() {
-      const skills = document.querySelectorAll('.skill');
-      skills.forEach(skill => {
-        const circle = skill.querySelector('.progress');
-        const percentText = skill.querySelector('.skill-percent');
-        const radius = 54;
-        const circumference = 2 * Math.PI * radius;
-        const percent = skill.getAttribute('data-percent');
-
-        circle.style.strokeDasharray = circumference;
-        circle.style.strokeDashoffset = circumference;
-
-        // Animate stroke offset
-        setTimeout(() => {
-          const offset = circumference - (circumference * percent) / 100;
-          circle.style.strokeDashoffset = offset;
-          percentText.textContent = percent + '%';
-        }, 500);
+      const skills = document.querySelectorAll('.progress-bar span');
+      skills.forEach(span => {
+        const width = span.getAttribute('data-width');
+        span.style.width = width;
       });
     }
-    window.addEventListener('load', animateSkills);
 
-    // Scroll to section on button click
-    function scrollToSection(id) {
-      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-    }
+    // Animate skills on page load & when scrolled to skills section
+    window.addEventListener('load', animateSkills);
+    window.addEventListener('scroll', () => {
+      const skillsSection = document.getElementById('skills');
+      const rect = skillsSection.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom >= 0) {
+        animateSkills();
+      }
+    });
+
+    // Dark mode toggle
+    const darkToggle = document.getElementById('darkToggle');
+    darkToggle.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+    });
   </script>
 
 </body>
+
 </html>
