@@ -47,35 +47,47 @@
 
 
     }
+    .row
+    {
+      margin: 0px;
+      padding: 0px;
+    }
 
     .about {
       font-size: 20px;
-      margin-left: 700px;
-      padding: 20px;
+      
     }
 
     .aboutme {
       background-color: rgb(91, 74, 74);
       color: white;
 
-      padding: 0;
+    
 
     }
 
     .abt {
-      -background-image: url(images/aboutimag.jpg);
+      background-image: url(images/);
       background-size: cover;
       background-size: 100% 100%;
-      -padding: 19px;
       height: 540px;
     }
 
     .section-title {
-      font-size: 40px;
+      font-size: 30px;
       color: #00ffc8;
       margin-bottom: 60px;
       font-weight: bold;
       text-shadow: 0 0 10px #00ffc8;
+      margin-top: 20px;
+    }
+    img{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 330px;
+      border-radius: 50%;
+      
     }
   </style>
 </head>
@@ -90,14 +102,23 @@
       <li><a href="contact.html" id="contact-link">Contact</a></li>
     </ul>
   </div>
-  <div class="abt ">
+  
 
-    <div class="">
-
-      <b class=" section-title text-center d-block text-white" data-aos="fade-down" style="font-size: 25px; margin-top: 30px;">About
+     <b class=" section-title text-white d-flex justify-content-center align-items-center" data-aos="fade-down"> About
         Me</b>
-      <div>
-        <div class="about mt-3 text-white ">
+        <div class="container">
+      <div class="row">
+        
+         <div class="col-md-4 d-flex justify-content-center align-items-center">
+        
+            <img src="images/sachin1.jpeg" alt="" class="sachinimage">
+          
+      </div>
+        <div class="col-md-8">
+
+     
+      
+        <div class="about mt-3 text-white ms-5">
           <P>Hello I'm <strong>Dantani Sachin</strong> , a passionate web developer and a B.Com student from Mehsana. I
             specialize in creating responsive, user friendly websites using technologies like HTML, CSS, bootstrap,
             JavaScript, and Figma.</P>
@@ -113,8 +134,11 @@
             eager to grow as a developer.
           </p>
         </div>
+      
       </div>
-    </div>
+      </div>
+      </div>
+    
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>

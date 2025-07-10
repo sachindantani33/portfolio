@@ -13,40 +13,38 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    * {
+     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
-
     .navbar {
+  -border: 1px solid red;
+  display: flex;
+  justify-content: center;  /* Center content inside navbar */
+  align-items: center;
+  padding: 10px 20px;
+  top: 20px;
+}
 
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 10px 20px;
-      top: 20px;
-    }
-
-    ul {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      list-style: none;
-      gap: 40px;
-    }
-
-    ul li a {
-      font-weight: bold;
-    }
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 40px; /* spacing between list items */
+}
+ul li a{
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
     body {
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, #070d0f, #16292f, #102027);
       color: white;
-      
-
-
+      height: 100vh;
+      -display: block;
 
 
     }
@@ -106,7 +104,8 @@
       -height: 100vh;
       align-items: center;
       margin-top: 50px;
-      height: 500px;
+      min-height: 547px;
+      
     }
 
     .image-box {
@@ -141,6 +140,7 @@
     .typed-cursor {
       display: none !important;
     }
+    
   </style>
 </head>
 
@@ -161,10 +161,10 @@
   <section>
     <div class="sachinhome">
       <div class="image-box">
-        <img src="images/sachin1.jpeg" alt="" style="height: 400px; width: 330px;">
+        <img src="images/sachin1.jpeg" alt="" style="height: 400px; width: 330px; ">
       </div>
       <div class="ss">
-        <h1 id="typed-text" style="height: 50px; width: 550px;"></h1>
+        <h1 id="typed-text" style="height: 50px; width: 650px;"></h1>
         <div>
           <p>Aspiring Web Developer | B.Com Student | Front-End Enthusiast</p>
 
@@ -178,8 +178,9 @@
       </div>
       </div>
   </section>
-  <script>const typed = new Typed('#typed-text', {
-      strings: ["Hi, I'm Sachin.", "I'm a Web Developer."],
+  <script>
+  const typed = new Typed('#typed-text', {
+      strings: ["Hi, I'm Sachin.", "I'm a Web Developer.", "I'm a Python Developer."],
       typeSpeed: 50,
       backSpeed: 30,
       loop: true

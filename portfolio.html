@@ -617,7 +617,7 @@
 
   -->
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -687,6 +687,7 @@
       color: #222;
       box-shadow: 0 0 15px #8bbf8daa;
     }
+   
 
     body.light-mode #skills {
       background: #fff;
@@ -706,7 +707,7 @@
       box-shadow: 0 0 25px #238636dd;
     }
 
-    body.light-mode #projects {
+    body.light-mode #projects  {
       background: #fff;
       color: #222;
       box-shadow: 0 0 15px #8bbf8daa;
@@ -921,7 +922,7 @@
       transform: scale(1.2);
     }
 
-    /* About Section */
+    
     #about {
       background: #161b22;
       padding: 3rem 2rem;
@@ -959,7 +960,7 @@
       color: #8b949e;
     }
 
-    /* Skills Section */
+    
     #skills {
       margin-top: 3rem;
       padding: 2rem;
@@ -1028,7 +1029,7 @@
       box-shadow: 0 0 8px #2ea043cc;
     }
 
-    /* Floating background shapes for hero */
+    
     .floating-shape {
       position: absolute;
       border-radius: 50%;
@@ -1051,7 +1052,7 @@
       }
     }
 
-    /* Responsive */
+    
     @media (max-width: 768px) {
       nav ul {
         gap: 1rem;
@@ -1075,7 +1076,7 @@
 
 <body>
 
-  <!-- Navbar -->
+  
   <nav>
     <div class="logo">Dantani Sachin</div>
     <ul>
@@ -1087,7 +1088,7 @@
     <button id="darkToggle">Toggle Dark Mode</button>
   </nav>
 
-  <!-- Hero Section -->
+  
   <section class="hero">
     <h1>Dantani Sachin</h1>
     <h2 id="typed-text"></h2>
@@ -1101,13 +1102,13 @@
       <a href="https://twitter.com/dantanisachin" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
     </div>
 
-    <!-- Floating shapes -->
+    
     <div class="floating-shape" style="width:40px; height:40px; left:10%; top:30%; animation-delay: 0s;"></div>
     <div class="floating-shape" style="width:60px; height:60px; left:75%; top:20%; animation-delay: 2s;"></div>
     <div class="floating-shape" style="width:30px; height:30px; left:50%; top:80%; animation-delay: 4s;"></div>
   </section>
 
-  <!-- About Section -->
+
   <section id="about" class="container">
     <img src="https://i.ibb.co/Q9yv5Yn/IMG-20221113-114916-01-01.jpg" alt="Dantani Sachin" />
     <div class="text">
@@ -1116,7 +1117,7 @@
     </div>
   </section>
 
-  <!-- Skills Section -->
+  
   <section id="skills" class="container">
     <h3>Skills</h3>
     <div class="skills-container">
@@ -1180,7 +1181,7 @@
   </section>
 
 
-  <!-- Contact Section -->
+  
   <section id="contact" class="container"
     style="margin-top: 3rem; padding: 2rem; background: #161b22; border-radius: 12px; box-shadow: 0 0 20px #238636cc; color: #c9d1d9;">
     <h3 style="color: #58a6ff; text-align: center; margin-bottom: 1.5rem;">Contact Me</h3>
@@ -1210,7 +1211,7 @@
 
 
   <script>
-    // Typing effect for hero h2
+    
     const phrases = ["Web Developer", "Frontend Enthusiast", "Backend Coder", "UI/UX Designer"];
     let i = 0, j = 0;
     let currentPhrase = '';
@@ -1242,7 +1243,7 @@
     }
     type();
 
-    // Animate skill progress bars when visible
+    
     function animateSkills() {
       const skills = document.querySelectorAll('.progress-bar span');
       skills.forEach(span => {
@@ -1251,7 +1252,7 @@
       });
     }
 
-    // Animate skills on page load & when scrolled to skills section
+    
     window.addEventListener('load', animateSkills);
     window.addEventListener('scroll', () => {
       const skillsSection = document.getElementById('skills');
@@ -1261,7 +1262,7 @@
       }
     });
 
-    // Dark mode toggle
+    
     const darkToggle = document.getElementById('darkToggle');
     darkToggle.addEventListener('click', () => {
       document.body.classList.toggle('light-mode');
@@ -1270,4 +1271,4 @@
 
 </body>
 
-</html>
+</html> -->
