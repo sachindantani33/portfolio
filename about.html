@@ -1,114 +1,198 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/all.css">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- FontAwesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+
+
     <style>
-        
-        .header-1 {
-            -height: 30px;
-            background-color: rgb(61, 60, 59);
-        }
+         body{
+    background-color: black;
+   }
+   /* Topbar */
+    .header-1 {
+      background: rgb(61, 60, 59);
+    }
 
-        .header-2 {
-            -height: 70px;
-            background-color: #121212;
-            -border: 1px solid rgb(255, 255, 255);
-            -border-top: 0;
-            border-inline: 0;
-            box-shadow: 0px 4px 5px;
+    .header-1 p {
+      font-size: 14px;
+    }
 
-        }
+    /* Navbar */
+    .header-2 {
+      background: #121212;
+      box-shadow: 0px 3px 8px rgba(0,0,0,0.4);
+    }
 
-        ul li a {
-            text-decoration: none;
-            color: white !important;
-            font-size: 20px !important;
-        }
-        .section-about{
-            height: 420px;
-        }
-        .abt{
-            background-image: url(images/images.png);
-            background-size: cover ;
-            background-size: 100% 100%;
-            background-position: center;
-        }
-        .ss {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-           margin-top: 100px;
-            
-        }
+    /* Navbar Links */
+    .navbar-nav .nav-link {
+      color: white !important;
+      font-size: 18px;
+      font-weight: 500;
+      position: relative;
+      transition: 0.3s;
+    }
+
+    /* Hover underline animation */
+    .navbar-nav .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background: #00ffd5;
+      transition: 0.3s;
+    }
+
+    .navbar-nav .nav-link:hover::after,
+    .navbar-nav .nav-link.active::after {
+      width: 100%;
+    }
+
+    /* Active link color */
+    .navbar-nav .nav-link.active {
+      color: #00ffd5 !important;
+      font-weight: 600;
+    }
+
+    /* Mobile Hamburger Icon */
+    .navbar-toggler {
+      font-size: 22px;
+      border: none;
+      color: white;
+    }
+
+    .navbar-toggler:focus {
+      box-shadow: none;
+    }
+
+    .about-title {
+      font-size: 28px;
+      font-weight: bold;
+      padding: 10px;
+      color: #fff;
+    }
+    .about-text p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    .about-images img {
+      border-radius: 10px;
+      object-fit: cover;
+      width: 100%;
+    }
+    .about-images .img-small {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      width: 60%;
+      border: 4px solid #fff;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    }
+    .about-images {
+      position: relative;
+      max-width: 400px;
+      margin: auto;
+    }
+
     </style>
 </head>
 <body>
-    
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <div class="main-header">
-    <div class="header-1">
-        <div class="container d-flex justify-content-between ">
-            <p class="text-white">One Stop solutions for your career</p>
-            <p class="text-white"><i class="fa-regular fa-envelope"></i> hello@tcpindia.in
-
-                <i class="fa-solid fa-phone"></i> +91 9099775550</p>
-        </div>
+      <!-- Header Section -->
+  <header>
+    <!-- ✅ Topbar -->
+    <div class="header-1 py-1">
+      <div class="container d-flex flex-wrap justify-content-between align-items-center">
+        <p class="text-white m-0 small">
+          One Stop solutions for your career
+        </p>
+        <p class="text-white m-0 small">
+          <i class="fa-regular fa-envelope me-2"></i> hello@tcpindia.in
+          <span class="ms-3"><i class="fa-solid fa-phone me-1"></i> +91 9099775550</span>
+        </p>
+      </div>
     </div>
-    <div class="header-2 ">
-        <div class="container d-flex justify-content-between justify-content-center align-items-center">
-            <img src="images/Group-63.png" alt="" style="height: 80px; width: 90px;">
-            <div>
-                <ul class="d-flex list-unstyled gap-4  ms-5 nav nav-pills ">
-                    <li class="nav-item"><a href="tcp-website.html" class="nav-link ">Home</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link active" data-bs-toggle="nav-pills">About</a></li>
-                    <li class="nav-item"><a href="corces.html" class="nav-link">Courses</a></li>
-                    <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Blogs</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
-                   
-                </ul>   
-            
-            </div>
 
-            <button class=" button btn btn-lg btn-primary p-1 font-monospace">Login</button>
+    <!-- ✅ Navbar -->
+    <nav class="navbar navbar-expand-lg header-2">
+      <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand text-white fw-bold" href="#">
+          <img src="images/Group-63.png" alt="Logo" height="60" class="me-2">
+        </a>
 
+        <!-- Hamburger -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- Menu -->
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-4">
+            <li class="nav-item"><a class="nav-link " href="tcpindia.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="corces.html">Courses</a></li>
+            <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog.html">Blogs</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+
+          <!-- Login Button -->
+          <a href="#" class="btn btn-primary btn-sm ms-lg-3 px-4 rounded-pill">Login</a>
         </div>
-    </div>
-    <div class="abt">
-        <div class="section-about ">
-            <div class="container ">
-                <b class="text-center d-block text-white" style="font-size: 25px; padding: 10px;">About us</b>
-                <div class="d-flex justify-content-between p-2">
-                    <div style="width: 751px; margin-top:50px;" class="">
-                        <p style="font-size: 20px; color: blue;">Join us at TCP India on a transformative IT learning
-                            journey.</p>
-                        <p class="text-white">Welcome to TCP India, where we take pride in offering IT courses designed
-                            to empower students with essential skills and knowledge. With our team of expert
-                            instructors, we are dedicated to preparing our students for success in the dynamic field of
-                            information technology.</p>
-                        <p style="font-size: 20px;" class="h6 text-white">Whether you are starting your IT journey or
-                            looking to enhance your existing skills, we have the perfect course for you.</p>
-                          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis, error sunt iusto ea similique earum aspernatur quasi ab in, aperiam, facere suscipit esse voluptates reiciendis pariatur nisi qui commodi id. Ullam quibusdam maiores maxime quisquam magnam! Et quasi beatae itaque molestias officiis ipsam molestiae blanditiis maxime dolore. Voluptate, explicabo pariatur.</p>  
+      </div>
+    </nav>
+  </header>
 
-                          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat impedit corporis magni ad quis et blanditiis autem, aliquid facere ratione explicabo sapiente natus quod omnis inventore eius iure voluptas, numquam doloremque accusantium? Suscipit iusto dolores inventore quasi et alias dicta maiores nobis quisquam sapiente eos dolorum ullam, corrupti, nulla explicabo!</p>
-                    </div>
-                    
+  <!-- Heading -->
+  <div class="header-3 text-center bg-dark p-3 text-white">
+    <h1 class="m-0" style="font-size: 25px;">
+      Best IT, Software Training Institute in Mehsana
+    </h1>
+  </div>
 
-                    <div class="position-relative ps-md-2 ps-0 pt-2">
-                        <img src="images/about1.jpg"alt="" class="img-fluid"
-                            style="width: 217.98px; height: 217.98px; margin-top: 50px; margin-right: 150px;">
-                        <img src="images/about2.jpg" class="ss" alt="" style="width: 200px; height: 132.8px;" class="img-fluid">
-                    </div>
-                </div>
-
-            </div>
+  <!-- About Us -->
+  <section class="section-about py-5">
+    <div class="container">
+      <h2 class="about-title text-center">About Us</h2>
+      <div class="row align-items-center g-4">
+        
+        <!-- Text -->
+        <div class="col-md-7 about-text text-white">
+          <p class="text-primary fw-bold">Join us at TCP India on a transformative IT learning journey.</p>
+          <p>
+            Welcome to TCP India, where we take pride in offering IT courses designed
+            to empower students with essential skills and knowledge. With our team of expert
+            instructors, we are dedicated to preparing our students for success in the dynamic field of
+            information technology.
+          </p>
+          <p>
+            Whether you are starting your IT journey or looking to enhance your existing skills,
+            we have the perfect course for you.
+          </p>
+          <button class="btn btn-primary mt-3">Discover More</button>
         </div>
-    </div>
-</div>
 
+        <!-- Images -->
+        <div class="col-md-5">
+          <div class="about-images">
+            <img src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?auto=format&fit=crop&w=600&q=80" 
+                 alt="Main About Image">
+            <img src="https://lh4.googleusercontent.com/vO3Rey0_EnLge0U9tJqvDnIe_PX2wJhmwT8xsVfVeJriuFbl0JWJHz2_-rKgs5Ww_tp55BPrAQ805YRnpWmFFDNpbM7qes2xPhbDWQ7M06bv2ZcdKhqT16AzZrRuc2L1-UqvmWoP=s0" 
+                 alt="Small About Image" class="img-small">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
