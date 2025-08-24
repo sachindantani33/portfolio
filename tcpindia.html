@@ -10,6 +10,8 @@
 
   <!-- FontAwesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/all.css">
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -56,7 +58,12 @@
 
           <!-- Login Button -->
           <a href="#" class="btn btn-primary btn-sm ms-lg-3 px-4 rounded-pill">Login</a>
-        </div>
+
+        </div><!-- Navbar ke andar right side me -->
+<button id="darkToggle" class="btn btn-outline-light ms-3">
+  🌙
+</button>
+
       </div>
     </nav>
   </header>
@@ -456,7 +463,30 @@
     </div>
   </footer>
 
+  <script>
+  const toggleBtn = document.getElementById("darkToggle");
+  const body = document.body;
+
+  // Check agar pehle dark mode ON tha
+  if (localStorage.getItem("theme") === "dark") {
+    body.classList.add("dark");
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    body.classList.toggle("dark");
+
+    if (body.classList.contains("dark")) {
+      localStorage.setItem("theme", "dark");
+      toggleBtn.innerHTML = "☀️";
+    } else {
+      localStorage.setItem("theme", "light");
+      toggleBtn.innerHTML = "🌙";
+    }
+  });
+</script>
+
   <!-- ✅ Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

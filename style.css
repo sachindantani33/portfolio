@@ -339,3 +339,24 @@
       font-size: 13px;
       color: #aaa;
     }
+
+    /* Dark Mode */
+body.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark .navbar,
+body.dark .header-1,
+body.dark .header-2,
+body.dark .footer,
+body.dark .card,
+body.dark .section-services,
+body.dark .blog-section {
+  background-color: #1e1e1e !important;
+  color: #ffffff !important;
+}
+
+body.dark a {
+  color: #ffcc00;
+}
